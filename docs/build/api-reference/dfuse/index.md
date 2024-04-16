@@ -1,39 +1,39 @@
 ---
-title: dfuse for WAX dApps
-order: 120
+标题: dfuse为WAX链上的去中心化应用（dApps）提供了支持
+顺序: 120
 ---
 
-# dfuse for WAX dApps
+#  dfuse为WAX链上的去中心化应用（dApps）提供了支持
 
-[dfuse](https://dfuse.eosnation.io) is a powerful suite of APIs for WAX dApp Developers. The dfuse platform allows you to easily execute searches, stream real-time data, and push transactions to the WAX Blockchain.
+[dfuse](https://dfuse.eosnation.io) 是为 WAX 去中心化应用（dApp）开发者设计的一套强大的 API。dfuse 平台使您可以轻松执行搜索、实时数据流和向 WAX 链推送交易。
 
-## What's Included
+## 包含了什么内容？
 
-- [dfuse Search](https://medium.com/@dfuseio/kicking-off-2019-with-a-revolution-searchability-on-the-blockchain-dbb7bb3e6bae) - Search by actions, accounts, and more with real-time indexing.
-- [eosq](https://wax.eosq.eosnation.io) - High-precision block explorer with the greatest level of details.
-- All API services to meet your needs:
+- [dfuse Search](https://medium.com/@dfuseio/kicking-off-2019-with-a-revolution-searchability-on-the-blockchain-dbb7bb3e6bae) - 支持实时索引，可以根据操作、账户等信息进行搜索。
+- [eosq](https://wax.eosq.eosnation.io) - 高精度的区块浏览器，展示了最详尽的细节。
+- 满足您需求的所有 API 服务：
   - [GraphQL (both query and subscription)](https://docs.dfuse.eosnation.io/eosio/public-apis/reference/graphql-api/)
   - [WebSocket](https://docs.dfuse.eosnation.io/reference/eosio/websocket/)
   - [REST](https://docs.dfuse.eosnation.io/reference/eosio/rest/).
 
-## Endpoints
+## 端点
 
-You can use the following URLs to connect to dfuse APIs:
+您可以使用以下 URL 连接到 dfuse 的 API：
 
-| dfuse Product | WAX Endpoint                      |
+| dfuse 产品 | WAX 端点                      |
 | ------------- | --------------------------------- |
 | [WebSocket](https://docs.dfuse.eosnation.io/reference/eosio/websocket/) | wss://wax.dfuse.eosnation.io/v1/stream |
 | [REST](https://docs.dfuse.eosnation.io/reference/eosio/rest/block-id-by-time/) | https://wax.dfuse.eosnation.io/ |
 | [GraphQL](https://docs.dfuse.eosnation.io/reference/eosio/graphql/) | https://wax.dfuse.eosnation.io/graphql |
 
-Refer to [WAX API Endpoints](https://docs.dfuse.eosnation.io/eosio/public-apis/reference/network-endpoints/#wax-mainnet) for more information.
+请参阅 [WAX API 端点](https://docs.dfuse.eosnation.io/eosio/public-apis/reference/network-endpoints/#wax-mainnet) 获取更多信息。
 
-## Resources
+## 资源
 
-To learn more about dfuse:
+了解更多关于dfuse的信息：
 
-- [dfuse API Documentation](https://docs.dfuse.eosnation.io/eosio/)
-- [dfuse/WAX Getting Started Guides](https://docs.dfuse.eosnation.io/eosio/public-apis/getting-started/)
-- [Download samples in React, Node.js, and more](https://docs.dfuse.eosnation.io/eosio/public-apis/samples/)
+- [dfuse API 文档](https://docs.dfuse.eosnation.io/eosio/)
+- [dfuse/WAX 入门指南 ](https://docs.dfuse.eosnation.io/eosio/public-apis/getting-started/)
+- [下载 React, Node.js,等示例代码](https://docs.dfuse.eosnation.io/eosio/public-apis/samples/)
 
 <ChildTableOfContents :max="2" title="More inside this section" />
