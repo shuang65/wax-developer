@@ -1,17 +1,17 @@
 ---
-title: dfuse Example
-order: 121
+标题: dfuse 用例
+顺序: 121
 ---
 
-# dfuse Example
+# dfuse 用例
 
-In this example, we'll sign up for a free account and get the WAX RNG abi using dfuse REST. 
+在本例中，我们将注册一个免费帐户，并使用dfuse REST获取WAX RNG abi。 
 
-1. Sign up for a <a href="https://dfuse.eosnation.io/" target="_blank">free dfuse account</a>.
+1. 注册一个 <a href="https://dfuse.eosnation.io/" target="_blank">免费的 dfuse 账户</a>。
 
-2. Click Create New Key.
+2. 单击创建新密钥。
 
-3. Get a short-lived JWT using your API key.
+3. 用你的 API 密钥来获取一个短期有效的 JWT。
 
 ```
   curl -X POST \
@@ -23,7 +23,7 @@ In this example, we'll sign up for a free account and get the WAX RNG abi using 
 }'
 ```
 
-4. Use the `abi` endpoint to get the WAX RNG smart contract endpoint. In the Header, set the Authorization to Bearer and use your JWT from the previous step.
+4. 使用 abi 端点获取 WAX RNG 智能合约端点。在标头中，将授权设置为 Bearer，并使用您在上一步中获得的 JWT。
 
 ```
     curl -X GET \
@@ -32,7 +32,7 @@ In this example, we'll sign up for a free account and get the WAX RNG abi using 
       -H 'cache-control: no-cache'
 ```
 
-### Example Response
+### 示例响应
 
 ```json
     {
