@@ -1,23 +1,23 @@
 ---
-标题： WAX-RPC API
-顺序： 20
+标题: WAX-RPC API
+顺序: 20
 ---
 
 # WAX-RPC API
 
-The WAX Blockchain RPC API includes public endpoints used to get block information, block history, node information, and node producer information. Exposed through **nodeos** plugins, this API is available on the WAX mainnet and your local development environment. 
+WAX链RPC API提供了公共端点，可用于获取区块信息、区块历史、节点信息以及节点生产者信息。这些端点通过 **nodeos** 插件提供，在WAX主网和本地开发环境中均可使用。
 
-:::tip
-If you're making local requests, <strong>nodeos</strong> must be running.
+:::提示
+如果您正在进行本地请求， 则必须运行<strong>nodeos</strong>。
 :::
 
 
-| Environment | URL |
+|环境 | URL |
 | --- | ----------- |
-| WAX mainnet | Check node availability at [https://validate.eosnation.io/wax/reports/endpoints.html](https://validate.eosnation.io/wax/reports/endpoints.html) |
-| Local Testnet | http://127.0.0.1:8888 |
+| WAX 主网 | 在[https://validate.eosnation.io/wax/reports/endpoints.html](https://validate.eosnation.io/wax/reports/endpoints.html) 检查节点可用性|
+| 本地测试网 | http://127.0.0.1:8888 |
 
-You can make API requests directly to blockchain endpoints:
+您可以直接向区块链端点发出API请求：
 
 ```
 curl --request POST \
@@ -25,14 +25,14 @@ curl --request POST \
   --header 'content-type: application/x-www-form-urlencoded; charset=UTF-8'
 ```
 
-You can also call these endpoints using **cleos** commands:
+您还可以使用 **cleos** 命令调用这些端点：
 
 ```
 cleos -u [api-url] get info
 ```
 
-## Additional Information and Third-Party Tools
+## 附加信息和第三方工具
 
-Refer to <a href="https://docs.eosnetwork.com/leap/latest/nodeos/rpc_apis/" target="_blank">RPC API documentation </a> for a list of API calls.
+请参阅 <a href="https://docs.eosnetwork.com/leap/latest/nodeos/rpc_apis/" target="_blank">RPC API 文档 </a> 获取API调用列表。
 
-<a href="https://github.com/eosnetworkfoundation/mandel-eosjs" target="_blank">eosjs</a> is a javascript API SDK that's used to easily communicate with the WAX RPC API. To simplify development, you can use this tool to access blockchain endpoints.
+<a href="https://github.com/eosnetworkfoundation/mandel-eosjs" target="_blank">eosjs</a> 是一个 JavaScript API SDK，用于与 WAX RPC API 进行简单通信。为了简化开发，您可以使用这个工具来访问区块链端点。
