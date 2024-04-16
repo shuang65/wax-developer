@@ -1,17 +1,17 @@
 ---
-title: Setting up WalletConnect with dApp
+标题: 配置dApp与WalletConnect
 ---
 
-## Setting up WalletConnect with dApp
+## 配置dApp与WalletConnect
 
 ![](/assets/images/build/wallet-connect/wallet-connect-0.png)
 
-*Cloud Wallet Upgrades*
+*云钱包升级*
 
-The integration of Wallet Connect with the Cloud Wallet signifies WAX's continued dedication to a multi-chain future. Through Wallet Connect's cross-chain protocol, Cloud Wallet users can seamlessly link their wallets with their top-choice dApps across the web3 universe. Furthermore, Wallet Connect offers dApp developers a flexible instrument to enhance their user experience wherever they choose to engage. If you're aiming to offer this advanced feature to your audience, you're in the right spot!
+将Wallet Connect与Cloud Wallet集成，表明了WAX对多链未来的持续关注。通过Wallet Connect的跨链协议，Cloud Wallet用户能够轻松地将其钱包与web3元宇宙中他们所选的dApps连接起来。此外，Wallet Connect还为dApp开发者提供了灵活的工具，可以提升用户体验，无论用户选择在何处参与。
 
-Wallet Connect stands as a foundational wallet framework within the EVM ecosystem. It empowers dApp developers to craft their projects and integrate Wallet Connect, facilitating users to seamlessly access any supporting wallet. This is akin to WAX's UAL, which presents a window with diverse wallet alternatives.
+如果您想要向您的用户提供这一高级功能，您来对地方了！Wallet Connect作为EVM生态系统中的基础钱包框架，赋予了dApp开发者创造项目并集成Wallet Connect的能力，从而使用户能够无缝访问任何支持的钱包。这与WAX的UAL类似，为用户提供了多种钱包选择。
 
-With the inclusion of the WAX Blockchain in Wallet Connect, both Cloud Wallet and WAX Blockchain have been assimilated into the Wallet Connect network. Consequently, any dApp that incorporates Wallet Connect can now more effortlessly support the WAX blockchain.
+通过将WAX链整合到Wallet Connect中，Cloud Wallet和WAX区块链已经融入到了Wallet Connect网络中。因此，任何集成了Wallet Connect的dApp现在都能更轻松地使用WAX链。
 
 <ChildTableOfContents :max="2" title="More inside this section" />
