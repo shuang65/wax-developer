@@ -1,39 +1,39 @@
 ---
-title: WAX-CDT API
-order: 25
+标题: WAX-CDT API
+顺序: 25
 ---
 
 # WAX-CDT API
 
-All of your smart contracts inherit from the C++ API files available in the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/)library. These files are used to define your smart contract's actions, structures, and data types. 
+你所有的智能合约都继承自 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/)库中的 C++ API 文件。 这些文件用于定义你的智能合约的操作、结构和数据类型。  
 
-This smart contract API can be grouped into three key modules:
+这个智能合约的 API 可以分为三个关键模块：
 
-* **contracts:** This is the primary C++ contracts API used for communicating with the WAX Blockchain. This library defines actions, dispatchers, permissions, and more. 
-* **core:** This library handles datastreams, the **name** datatype, serialization objects, and more. 
-* **types:** This library defines the base contract, data layouts, data structures, and more. 
+* **合约:** 这是主要用于与 WAX  链通信的 C++ 合约 API。这个库定义了操作、调度器、权限等内容。 
+* **核心:** 这个库处理数据流，  **name** 数据类型， 序列化对象等。 
+* **数据类型:** 这个库定义了基础合约、数据布局、数据结构等内容。 
 
-All of these libraries are located in the **wax-cdt/libraries/eosiolib** folder. Most of this functionality is available once you include **<eosio/eosio.hpp>** in your smart contract. It's recommended that you review these files to help you understand how a smart contract is constructed.
+所有这些库都在 **wax-cdt/libraries/eosiolib** 文件夹里。只要在智能合约里加上  **<eosio/eosio.hpp>** 大部分功能就可以用了。建议查看这些文件，帮助您了解智能合约的构建方式。
 
-## WAX API Overloads and Customizations 
+## WAX API 的重载和自定义 
 
-### Method Name: verify_rsa_sha256_sig
+### 方法名称： verify_rsa_sha256_sig
 
-**Source Code:** <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/master/libraries/eosiolib/core/eosio/crypto.hpp#L283" target="_blank">WAX GitHub Repository</a>
+**源代码：** <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/master/libraries/eosiolib/core/eosio/crypto.hpp#L283" target="_blank">WAX GitHub 代码库</a>
 
-**Description:** Verify a signature using the RSA 256 algorithm. Implemented in native code, this method is about 15x's faster than standard WASM verification. Refer to <a href="https://www.emc.com/collateral/white-papers/h11300-pkcs-1v2-2-rsa-cryptography-standard-wp.pdf" target="_blank">RSA Cryptography Standard</a> for more information.
+**描述：** 使用 RSA 256 算法验证签名。这个方法采用原生代码实现，比标准的 WASM 验证快大约 15 倍。详细信息请参考 <a href="https://www.emc.com/collateral/white-papers/h11300-pkcs-1v2-2-rsa-cryptography-standard-wp.pdf" target="_blank">RSA 加密标准</a>。
 
-**Input Parameters:**
+**输入参数：**
 
-| Parameter | Description
+| 参数 | 描述
 | --- | -------------------------- |
-| message | Message buffer to verify. |
-| message_len | Message buffer length. |
-| signature | Signature as hex string. |
-| exponent | Public key exponent as hex string. |
-| modulus  | Modulus as hex string (a leading zero is not allowed). |
+| 信息 | 要验证的信息内容。 |
+| 信息长度 | 信息缓冲区的长度。 |
+| 签名 | 签名为十六进制字符串。 |
+| 指数 |公钥指数的十六进制字符串。 |
+| 系数  |系数以十六进制字符串表示（不允许有前导零）。 |
 
-**Example Usage:** This method is used to in our WAX RNG service to verify that the RSA signature (random value) returned from the WAX RNG oracle is valid.
+**示例用法** 这个方法用于我们的 WAX RNG 服务，用于验证从 WAX RNG oracle 返回的 RSA 签名（随机值）是否有效。
 
 ```
  eosio_assert(verify_rsa_sha256_sig(&signing_value, sizeof(signing_value), 
@@ -42,11 +42,11 @@ All of these libraries are located in the **wax-cdt/libraries/eosiolib** folder.
 ```
 
 
-**Return Value:** Boolean. True if the verification succeeds, False if not.
+**返回值：** 布尔值。如果验证成功，则为 True；如果失败，则为 False。
 
-## Data Types
+## 数据类型
 
-Your smart contracts can use the following data types:
+布尔值。如果验证成功，则为 True；如果失败，则为 False。
 
 * bool
 * string
