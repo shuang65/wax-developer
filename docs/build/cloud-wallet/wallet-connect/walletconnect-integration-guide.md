@@ -1,31 +1,32 @@
 ---
-title: Guide - Linking Wallet Connect with WAX Blockchain
-order: 2
+标题: 指南 - 将 Wallet Connect 与 WAX 链进行连接
+顺序: 2
 ---
 
-# Integration Guide: Linking Wallet Connect with WAX Blockchain
+# 集成指南: 将 Wallet Connect 与 WAX 链连接
 
-This guide walks you through the integration of Wallet Connect and WAX Blockchain, shedding light on the essential RPC interfaces and their intricacies. Whether you're a seasoned developer or a novice in the world of blockchain, this comprehensive overview will navigate you through the processes of setting up, signing, and pushing transactions seamlessly.
+
+这份指南将为您详细介绍如何将 Wallet Connect 与 WAX 链进行集成，同时解释关键的 RPC 接口及其复杂性。无论您是经验丰富的开发者还是区块链新手，这份全面的概述都将帮助您顺利完成设置、签名和推送交易的过程。
 
 ![](/assets/images/build/wallet-connect/wallet-connect-integration.png)
 
-## I. Setting up Wallet Connect < > WAX Blockchain
-* JSON-RPC spec for Wallets: [https://docs.eosnetwork.com/apis/leap/latest/](https://docs.eosnetwork.com/apis/leap/latest/)
-* CASA namespace spec: [Antelope CAIP Entry ChainAgnostic/namespaces#93](https://github.com/ChainAgnostic/namespaces/pull/93)
-* Namespaces: antelope
-* Chains:
-    1. WAX Mainnet - antelope:1064487b3cd1a897ce03ae5b6a865651
-    2. WAX Testnet - antelope:f16b1833c747c43682f4386fca9cbb32
-* RPC endpoints: [https://wax.validationcore.io/reports/nodes/api](https://wax.validationcore.io/reports/nodes/api)
+## I. 设置 Wallet Connect < > WAX 链
+* 钱包的JSON-RPC规范: [https://docs.eosnetwork.com/apis/leap/latest/](https://docs.eosnetwork.com/apis/leap/latest/)
+* CASA 命名空间范围: [Antelope CAIP Entry ChainAgnostic/namespaces#93](https://github.com/ChainAgnostic/namespaces/pull/93)
+* 命名空间: antelope
+* 链:
+    1. WAX 主网 - antelope:1064487b3cd1a897ce03ae5b6a865651
+    2. WAX 测试网 - antelope:f16b1833c747c43682f4386fca9cbb32
+* RPC 端点: [https://wax.validationcore.io/reports/nodes/api](https://wax.validationcore.io/reports/nodes/api)
 * [SLIP-0044](https://github.com/satoshilabs/slips/blob/master/slip-0044.md) coin type: 14001
 
 
-## II. Login Session with WalletConnect
+## II. 使用 WalletConnect登录会话
 
-Utilize a socket-based login session to establish a connection between a decentralized application (Dapp) and WalletConnect.
+利用基于 socket 的登录会话来建立去中心化应用（Dapp）与 WalletConnect 之间的连接。
 
 
-**Parameters**
+**参数**
 
 <table>
   <tr>
@@ -59,7 +60,7 @@ Events: list support events
   </tr>
 </table>
 
-**Example**
+**示例**
 
 ```json
 requiredNamespaces: {
@@ -87,11 +88,11 @@ pairingTopic: '4738621948defd3bf860cd2a235f1d998ed7e136fd3c82f19f3cd6ce7f8abcc8'
 
 
 
-**Response:**
+**响应:**
 
-If the request is rejected, a 4001 error will be returned.
+如果请求被拒绝，将返回一个 4001 错误。
 
-**Example**
+**示例**
 
 ```json
 {
@@ -101,10 +102,10 @@ If the request is rejected, a 4001 error will be returned.
 ```
 
 
-If the request is accepted, a WAX account string is returned.
+如果请求被接受，会返回一个 WAX 账号的字符串。
 
 
-**Example**
+**示例**
 
 
 ```json
@@ -181,10 +182,10 @@ If the request is accepted, a WAX account string is returned.
 ```
 
 
-## II. RPC interface
+## II. RPC 接口
 
 
-**RPC Specs**
+**RPC 规范**
 
 - [wax_get_available_keys](#wax-get-available-keys)
 - [wax_sign_message](#wax-sign-message)
@@ -193,8 +194,8 @@ If the request is accepted, a WAX account string is returned.
 
 <br>
 
-:::tip
-To provide context and information about the requesting DApp, Wallet can retrieve that data from the login session.
+:::提示
+为了提供请求 DApp 的上下文和详细信息，Wallet 可以直接从登录会话中获取所需数据。
 :::
 
 <table>
@@ -241,7 +242,7 @@ To provide context and information about the requesting DApp, Wallet can retriev
 </table>
 
 
-**Example**
+**示例**
 
 ```json
 {
@@ -263,12 +264,12 @@ To provide context and information about the requesting DApp, Wallet can retriev
 ## wax_get_available_keys
 
 
-**Description**
+**描述**
 
-Get public keys associated with the account, corresponding to the private keys held by the wallet.
+获取与账户关联的公钥，这些公钥对应于钱包中持有的私钥。
 
 
-**Parameters**
+**参数**
 
 <table>
   <tr>
@@ -283,7 +284,7 @@ Get public keys associated with the account, corresponding to the private keys h
 
 
 
-**Return**
+**返回**
 
 <table>
   <tr>
@@ -298,7 +299,7 @@ Get public keys associated with the account, corresponding to the private keys h
 
 
 
-**Example**
+**示例**
 
 
 ```json
@@ -324,12 +325,12 @@ Return:
 ## wax_sign_message
 
 
-**Description**
+**描述**
 
-Sign a message with the private keys specified via their public keys.
+使用指定公钥的私钥对消息进行签名。
 
 
-**Parameters**
+**参数**
 
 <table>
   <tr>
@@ -354,7 +355,7 @@ Sign a message with the private keys specified via their public keys.
 
 
 
-**Return**
+**返回**
 
 <table>
   <tr>
@@ -369,7 +370,7 @@ Sign a message with the private keys specified via their public keys.
 
 
 
-**Example**
+**示例**
 
 ```json
 Request:
@@ -433,12 +434,11 @@ Return:
 ## wax_sign_transaction
 
 
-**Description**
+**描述**
 
-Sign a transaction with the private keys specified via their public keys.
+使用指定公钥的私钥对消息进行签名。
 
-
-**Parameters**
+**参数**
 
 
 <table>
@@ -484,7 +484,7 @@ expiration?: string;<br><br>ref_block_num?: number;<br><br>ref_block_prefix?: nu
 
 
 
-**Return**
+**返回**
 
 
 <table>
@@ -518,7 +518,7 @@ expiration?: string;<br><br>ref_block_num?: number;<br><br>ref_block_prefix?: nu
 
 
 
-**Example**
+**示例**
 
 
 ```json
@@ -598,12 +598,12 @@ Return:
 
 ## wax_sign_push_transaction(Optional)
 
-**Description**
+**描述**
 
-Sign and push a transaction with the private keys specified via their public keys.
+使用指定的公钥签名并推送交易。
 
 
-**Parameters**
+**参数**
 
 <table>
   <tr>
@@ -648,7 +648,7 @@ expiration?: string;<br><br>ref_block_num?: number;<br><br>ref_block_prefix?: nu
 
 
 
-**Return**
+**返回**
 
 
 <table>
@@ -680,7 +680,7 @@ expiration?: string;<br><br>ref_block_num?: number;<br><br>ref_block_prefix?: nu
 
 
 
-**Example**
+**示例**
 
 
 ```json
@@ -698,14 +698,13 @@ Return:
 
 
 
-## wax_push_transaction(optional)
+## wax_push_transaction(可选的)
 
 [https://developers.eos.io/manuals/eos/v2.1/nodeos/plugins/chain_api_plugin/api-reference/index/#operation/push_transactions](https://developers.eos.io/manuals/eos/v2.1/nodeos/plugins/chain_api_plugin/api-reference/index/#operation/push_transactions)
 
-This method expects a transaction in JSON format and will attempt to apply it to the blockchain.
+这个方法需要一个 JSON 格式的交易，并会尝试将其提交到区块链上。
 
-
-**Parameters**
+**参数**
 
 
 <table>
