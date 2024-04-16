@@ -80,11 +80,11 @@
 * symbol_code
 * asset
 
-Refer to EOSIO's <a href="https://eosio.github.io/eosio.cdt/1.6.0/group__types.html" target="_blank">Types</a> for more information.
+更多信息，请参考EOSIO <a href="https://eosio.github.io/eosio.cdt/1.6.0/group__types.html" target="_blank">Types</a>页面。
 
-## Type Definitions
+## 类型定义
 
-WAX-CDT also includes a custom library of type definitions:
+WAX-CDT 还包含一套自定义的类型定义库：
 
 * typedef uint64_t account_name;
 * typedef uint64_t action_name;
@@ -96,6 +96,6 @@ WAX-CDT also includes a custom library of type definitions:
 * typedef struct checksum256 transaction_id_type;
 * typedef struct checksum256 block_id_type;
 
-## Additional Information
+## 附加信息
 
-For a complete list of features available from the smart contract C++ API, refer to EOSIO's <a href="https://eosio.github.io/eosio.cdt" target="_blank">C/C++ API</a>.
+要查看智能合约 C++ API 提供的所有功能，请参阅EOSIO的 <a href="https://eosio.github.io/eosio.cdt" target="_blank">C/C++ API</a>页面。
