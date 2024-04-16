@@ -1,18 +1,19 @@
 ---
-title: WaxJS Demo
-order: 4
+标题: WaxJS 演示
+顺序: 4
 ---
 
-# WaxJS Demo
+# WaxJS 演示
 
-Below is a basic example of WaxJS functionality. To use this demo, click WAX Login (if you're not automatically logged in), then click Sign Transaction.
+以下是 WaxJS 功能的基本示例。要使用此演示，请点击 "WAX 登录"（如果您没有自动登录），然后再点击 "签署交易"。
 
-**Auto-login Feature**
-<p>If your blockchain information displays below, you're automatically logged in to WaxJS, and you don't need to click WAX Login. This eliminates the need for multiple clicks and popups!</p>
+**自动登录功能**
+<p>如果您的区块链信息在下方显示，那么您已经自动登录到 WaxJS，无需再点击 WAX 登录。这样就省去了多次点击和弹出窗口的步骤！</p>
 <p style="color:#ef9d47" id="autologin"></p>
 
-**WAX Login**
-<p>Use this if you're not automatically logged in. Note that if you are auto-logged in, clicking this does not open a popup and the userAccount is still returned.</p>
+**WAX 登录**
+<p>如果您没有自动登录，请使用此功能。请注意，如果您已经自动登录，点击此功能不会打开弹出窗口，而是返回用户账户。
+</p>
 
 ```html
 <button class="text-md mt-4 border-black border-solid border-2 rounded px-4 py-2 w-40" id="login" onclick=login() >WAX Login</button>
@@ -21,19 +22,18 @@ Below is a basic example of WaxJS functionality. To use this demo, click WAX Log
 <p style="color:#ef9d47" id="loginresponse"></p>
 <p>&nbsp;</p>
 
-**Sign Transaction**
-<p>Click once you're logged in.</p>
+**签署交易**
+<p>在登录后点击一次</p>
 
 ```html
 <button class="mt-4 border-black border-solid border-2 rounded px-4 py-2 w-40" id="sign" onclick=sign() >Sign Transaction</button>
 ```
 
 
-## Code Examples
+## 代码示例
+要使用这些示例， 请从 GitHub 下载并保存  [WaxJS](https://raw.githubusercontent.com/worldwide-asset-exchange/waxjs/develop/dist-web/waxjs.js) 文件。
 
-To use these examples, download and save [WaxJS](https://raw.githubusercontent.com/worldwide-asset-exchange/waxjs/develop/dist-web/waxjs.js) from GitHub.
-
-**Simple Login**
+**简单登录**
 
 ```js
 const wax = new waxjs.WaxJS({
@@ -60,9 +60,9 @@ async function login() {
 } 
 ```
 
-**Complete Demo**
+**完整的演示**
 
-To run the demo above, copy the following code to **index.html**:
+要运行上面的演示， 请将以下代码复制到 **index.html**文件中:
 
 ```html
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ To run the demo above, copy the following code to **index.html**:
 
 <body>
 
-Below is a basic example of WaxJS functionality. To use this demo, click WAX Login (if you're not automatically logged in), then click Sign Transaction.
+以下是 WaxJS 功能的基本示例。要使用此演示，请点击 WAX 登录（如果您没有自动登录），然后再点击签署交易。
 
 <strong>Auto-login Feature</strong>
 <p>If your blockchain information displays below, you're automatically logged in to WaxJS, and you don't need to click WAX Login. This eliminates the need for multiple clicks and popups!</p>
