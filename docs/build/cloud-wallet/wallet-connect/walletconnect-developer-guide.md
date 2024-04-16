@@ -62,7 +62,7 @@
 WalletConnect 和 dApp 集成提供了管理数字交易的简单方式。按照上述步骤进行操作，将确保连接和交易体验的顺畅。始终保持更新最新版本和补丁，以修复已报告的任何错误。
 
 
-**Join the WAX Community**
+**加入 WAX 社区**
 
 [Twitter](https://twitter.com/WAX_io) | [Discord](https://go.wax.io/discord) | [WAX.io](https://www.wax.io/)
 
