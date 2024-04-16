@@ -1,6 +1,6 @@
 ---
-title: WAX-RPC API
-order: 20
+标题： WAX-RPC API
+顺序： 20
 ---
 
 # WAX-RPC API
