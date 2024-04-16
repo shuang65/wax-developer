@@ -1,26 +1,26 @@
 ---
-title: Cloud Wallet Quickstart
-order: 3
+标题: Cloud Wallet 快速入门
+顺序: 3
 ---
 
-# Cloud Wallet  Quickstart
+# Cloud Wallet  快速入门
 
-When users sign up or sign in to Cloud Wallet , a WAX Blockchain Account is automatically created. Users can easily manage their resources, blockchain transactions, NFTs, and whitelisted dApps from the Cloud Wallet  dashboard. 
+用户在 Cloud Wallet 注册或登录时，会自动创建一个 WAX 链账户。他们可以从 Cloud Wallet 仪表板轻松管理资源、区块链交易、NFT 和已列入白名单的 dApp。 
 
-In this guide, you'll learn how to use **WaxJS** to connect to the Cloud Wallet , allowing you to:
+在这个指南中，您将学习如何使用  **WaxJS** 连接到 Cloud Wallet ，从而实现以下功能：
 
-* Sign in users with Google, Facebook, Twitter, KakaoTalk, Reddit, and other social platforms
-* Get blockchain account names, public keys, and permissions
-* Easily execute smart contract transactions from your client
+* 允许用户使用 Google, Facebook, Twitter, KakaoTalk, Reddit，和其他社交平台登录
+* 获取区块链账户名称、公钥和权限
+* 轻松地从您的客户端执行智能合约交易
 
-:::tip 📝 Note
-In the next few sections, we'll go over how everything works. If you'd like to jump right to the code and run our live WaxJS example, refer to [WaxJS Demo](/build/cloud-wallet/waxjs/waxjs_demo).
+:::提示 📝 注意
+接下来的几节中，我们将详细介绍一切的工作原理。如果您想直接查看代码并运行我们的实时 WaxJS 示例，请参考 [WaxJS Demo](/build/cloud-wallet/waxjs/waxjs_demo)。
 :::
 
-## Before You Begin
+## 在你开始之前
 
-* Create a [Cloud Wallet  Account](http://all-access.wax.io). 
-* Be familiar with the [ESIO/eosjs](https://github.com/EOSIO/eosjs) Javascript API. Refer to the [eosjs](https://eosio.github.io/eosjs/latest) docs for more information.
-* For tips on building and deploying smart contracts on the WAX Blockchain, refer to our [dApp Development](/build/dapp-development/) section. 
+* 创建一个 [Cloud Wallet  账户](http://all-access.wax.io)。
+* 熟悉 [ESIO/eosjs](https://github.com/EOSIO/eosjs) Javascript API. 请参阅 [eosjs](https://eosio.github.io/eosjs/latest) 文档获取更多信息。
+* 要了解在 WAX 链上构建和部署智能合约的技巧， 请查看我们的 [dApp Development](/build/dapp-development/) 部分。 
 
 
