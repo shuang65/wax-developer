@@ -1,19 +1,19 @@
 ---
-title: Start a Local Node
-order: 41
+标题: 启动本地节点
+顺序: 41
 ---
 
-# Start a Local Node
+# 启动本地节点
 
-To start a local WAX node on your development server:
+要在开发服务器上启动本地 WAX 节点，您可以按照以下步骤进行操作：
 
-1.  From the command line, enter the following to initialize **keosd**.
+1.  命令行中输入以下命令来初始化 **keosd**。
 
 ```shell
 keosd &
 ```
 
-The console prints the following information:
+控制台将输出以下信息：
 
 ```shell
 info  2019-07-16T21:22:39.501 thread-0  wallet_plugin.cpp:42          plugin_initialize    ] initializing wallet plugin
@@ -36,7 +36,7 @@ info  2019-07-16T21:22:39.565 thread-0  http_plugin.cpp:622           add_handle
 info  2019-07-16T21:22:39.567 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/unlock
 ```
 
-2. Next, paste the following to start producing blocks:
+2.接下来，将以下内容粘贴到命令行以开始生成区块：
 
 ```shell
 nodeos -e -p eosio \
@@ -49,26 +49,26 @@ nodeos -e -p eosio \
 --verbose-http-errors >> nodeos.log 2>&1 &
 ```
 
-This will initialize all of the basic plugins, set the server address (yours), and add contract debugging and logging. 
+这将初始化所有基本插件，设置服务器地址（您的），并添加合约调试和日志记录功能。 
 
 
-:::warning
-Important: The --access-control-allow-origin='*' parameter enables Cross-Origin Resource Sharing (CORS). Never enable this for a public node.     
+:::警告
+重要提示: --access-control-allow-origin='*' 参数启用了跨源资源共享（CORS）。绝对不要在公共节点上启用此选项。     
 :::
 
-When the command completes, the console prints out a number, similar to the following:
+可以更加优化吗？方便更好理解
 
 ```shell
 [2] 4529.
 ```
 
-3. To verify that **nodeos** is producing blocks, from the command line, use the **tail** command to view the log:
+3. 验证 **nodeos** 是否正在生产区块，请在命令行中使用 **tail** 令查看日志：
 
 ```shell
 tail -f nodeos.log
 ```
 
-The console prints your block information:
+控制台会输出您的区块信息：
 
 ```shell
 info  2019-07-16T21:36:14.501 thread-0  producer_plugin.cpp:1597      produce_block        ] Produced block 0000043f8f7c37a1... #1087 @ 2019-07-16T21:36:14.500 signed by eosio [trxs: 0, lib: 1086, confirmed: 0]
@@ -76,29 +76,29 @@ info  2019-07-16T21:36:15.001 thread-0  producer_plugin.cpp:1597      produce_bl
 ```
 
 
-:::tip
-Notice the "signed by eosio" signature - this is the local system account.
+:::提示
+请注意 "signed by eosio" 签名 - 这是本地系统账户。
 :::
 
-You're now running a local WAX node on your development server. Press Ctrl + c to close the log (**nodeos** will continue to run in the background). 
+您现在在开发服务器上运行了一个本地 WAX 节点。按下 Ctrl + c 可以关闭日志 (**nodeos** 会继续在后台运行)。
 
-## Stop a Local Node
+## 停止本地节点
 
-To cleanly stop **nodeos**:
+停止 **nodeos**:
 
-1. From the command line, run `pkill`:
+1. 在命令行中，运行 `pkill`:
 
 ```shell
 pkill nodeos
 ```
 
-2. To verify that **nodeos** is no longer producing blocks, run the `tail` command to view the log:
+2. 要验证 **nodeos** 是否不再生成区块，请运行 `tail` 命令查看日志：
 
 ```shell
 tail -f nodeos.log
 ```
 
-On the last line, the console prints: "nodeos successfully exiting."
+在最后一行，控制台会输出： "nodeos 成功登出"。
 
 ```shell
 info  2019-07-16T21:45:43.501 thread-0  producer_plugin.cpp:1597      produce_block        ] Produced block 000008b10f51d1ae... #2225 @ 2019-07-16T21:45:43.500 signed by eosio [trxs: 0, lib: 2224, confirmed: 0]
