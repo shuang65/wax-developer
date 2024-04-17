@@ -1,20 +1,21 @@
 ---
-title: Cloud Wallet 
+标题: Cloud Wallet 
 ---
 
 # Cloud Wallet 
 
-With just a few lines of code, Cloud Wallet  makes it as simple for customers to use your dApp as any mainstream app.
 
-1. Free SSO in 48 languages, using our free single sign on software.
-2. Zero investment in account security & management means you stay focused on driving business.
-3. Get to know your customers & grow sales with enriched profiling and personalization. Filter out bots & bad actors.
+Cloud Wallet 只需几行代码，就能让用户像使用主流应用一样轻松使用您的 dApp。
 
-The simplest way to onboard & manage accounts.
-Designed for use by anyone - gamers, developers, even crypto fanatics
+1. 使用我们的免费单点登录软件，支持48种语言的免费单点登录（SSO）。
+2. 不需要在账户安全与管理方面投入任何成本，这意味着您可以专注于推动业务发展。
+3. 通过丰富的个人资料和个性化服务，了解您的客户并促进销售增长。同时，过滤掉机器人和不良行为者，确保业务安全。
 
-## What makes Cloud Wallet  different?
-It's simple for mainstream gamers and app customers to use your dApp (not just the crypto community).
+账户注册和管理的最简单方式。
+适用于所有人群 - 游戏玩家、开发者，甚至加密货币爱好者。
+
+##  Cloud Wallet  有何独特之处?
+Cloud Wallet让主流游戏玩家和应用用户轻松使用您的dApp（而不仅仅是加密货币社区）。
 
 * No complicated onboarding process - just a 2 step login
 * Customers <b>don't have to connect MetaMask or any other third-party wallet</b> to log in or execute transactions
