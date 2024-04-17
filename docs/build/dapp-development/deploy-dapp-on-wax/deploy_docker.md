@@ -1,36 +1,36 @@
 ---
-title: Docker Deploy
-order: 72
+标题: Docker Deploy
+顺序: 72
 ---
 
-# Docker Deploy
+# 部署Docker 
 
-In this guide, you'll learn how to customize the **hello-world** build scripts to deploy your smart contracts to the WAX mainnet.
+在本指南中， 您将学习如何自定义 **hello-world** 的构建脚本，以便将您的智能合约部署到WAX主网。
 
-Before you begin:
+开始之前:
 
-* Make sure Docker is configured to run without sudo. 
-* Download the <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Blockchain Source Code</a>. Refer to the [WAX Blockchain Setup](/build/dapp-development/wax-blockchain-setup/)for more information.
-* Have your WAX Blockchain Account public/private keys available.
-* Make sure you have enough WAX staked in your account to allocate resources. 
+* 确保 Docker 已配置为无需sudo即可运行。 
+* 下载 <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX 链源代码</a>。 更多信息，请参阅 [WAX Blockchain Setup](/build/dapp-development/wax-blockchain-setup/) 。
+* 确保您拥有WAX链账户的公钥/私钥。
+* 确保您的账户中有足够的WAX抵押来分配资源。 
 
-:::tip
-You do not need to build WAX source code to complete these steps. 
+:::提示
+您无需构建WAX源代码即可完成这些步骤。 
 :::
 
-## Modify the Scripts
+## 修改脚本
 
-To modify the **hello-world** scripts to deploy your smart contract:
+要修改 **hello-world** 脚本以部署您的智能合约，请按照以下步骤
 
-1. From the command line, navigate to the **hello-world** folder in the <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Blockchain Source Code Repository</a>:
+1. 命令行界面中，导航至 <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX 链源代码库</a>中的**hello-world**文件夹
 
     ```shell
     cd wax-blockchain/samples/hello-world
     ```
 
-3. Copy the contents of **hello-world** to your smart contract's directory. For this example, we'll use **wax_deploy**. 
+3. 将 **hello-world** 文件夹的内容复制到您智能合约的目录中。 在这个示例中， 我们将使用 **wax_deploy**文件夹。
 
-4. From **wax_deploy**, open **CMakeLists.txt**. This file stores your project name and smart contract file name.
+4. 在 **wax_deploy**文件夹中， 打开 **CMakeLists.txt**。 这个文件存储了您的项目名称和智能合约文件名称。
 
     a. Type your contract name on line 25.
     ```shell
@@ -45,7 +45,7 @@ To modify the **hello-world** scripts to deploy your smart contract:
 
     Save the file. 
 
-5. Next, open **Makefile**. This file contains the scripts to run `cleos` and the WAX Docker Development image.
+5. 然后， 打开 **Makefile**。这个文件包含运行 `cleos` 和WAX Docker开发镜像的脚本。
 
     a. Type your contract name on Line 23.
     ```shell
@@ -65,8 +65,8 @@ To modify the **hello-world** scripts to deploy your smart contract:
 
     Save the file.
 
-:::tip
-`NODEOS_URL` is the only optional parameter. Its default value is the mainnet deployment address [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers/.  
+:::提示
+`NODEOS_URL` 是唯一的可选参数。 默认情况下是主网部署地址 [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers/.  
 :::
 
 Once these changes have been made, you're ready to use the `make` scripts to build and deploy your smart contract.
