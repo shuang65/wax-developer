@@ -17,29 +17,29 @@ Cloud Wallet 只需几行代码，就能让用户像使用主流应用一样轻�
 ##  Cloud Wallet  有何独特之处?
 Cloud Wallet让主流游戏玩家和应用用户轻松使用您的dApp（而不仅仅是加密货币社区）。
 
-* No complicated onboarding process - just a 2 step login
-* Customers <b>don't have to connect MetaMask or any other third-party wallet</b> to log in or execute transactions
-* Customers can <b>log in with their favorite platforms</b> like Facebook, Twitter, Reddit, Google, KakaoTalk, VK and more
+* 无需繁琐的注册流程 - 只需两步登录
+* 客户不需要连接MetaMask或其他任何第三方钱包即可登录或执行交易。
+* 客户可以使用 <b>他们喜欢的平台，</b> 如 Facebook, Twitter, Reddit, Google, KakaoTalk, VK 等进行登录
 
-## Featuring powerful developer tools
+## 提供强大的开发者工具
 
-Tap into the global community of gamers, item traders, and collectors in just minutes - for free (seriously)
+在几分钟内免费加入全球游戏玩家、物品交易者和收藏家的社区。
 
-* The [WCW Quickstart Guide](/build/cloud-wallet/waxjs/waxjs_qstart) features tutorials, installation instructions, code samples, and a live demo
-* Users can whitelist your dApp and auto-sign transactions, so <b>you can execute blockchain transactions on their behalf</b>
-* Zero investment in account security & management means you stay focused on driving business
+*  [WCW Quickstart Guide](/build/cloud-wallet/waxjs/waxjs_qstart) 包含教程、安装指南、代码示例和实时演示。
+* 用户可以将您的dApp添加到白名单并自动签署交易，这样您就可以代表他们执行区块链交易。</b>
+* 无需在账户安全与管理方面投入任何成本，这意味着您可以专注于推动业务发展。
 
-## Unique, user-friendly advantages
+## 独特和对用户友好的优势
 
-WCW is the uncomplicated crypto wallet
+WCW 是简单易用的加密钱包
 
-* Localized into <b>48 languages</b>
-* Stores both <b>NFTs and crypto balances</b> all in one wallet
-* Works on <b>mobile</b> just as easily as it does on a desktop
-* Customers can automatically log into your dApp any time they access it using the [WaxJS feature](/build/cloud-wallet/waxjs/)
+* 本地化支持 <b>48 种语言</b>
+* 将 <b>NFTs 和 加密余额</b> 都存储在同一个钱包中
+* 在 <b>移动设备</b> 上和在桌面设备上一样方便使用
+* 客户可以使用 [WaxJS 功能](/build/cloud-wallet/waxjs/) 在访问您的dApp时自动登录
 
-## Join dApps already using Cloud Wallet 
+## 加入已经使用 Cloud Wallet 的 dApp  
 
-Convert more customers. Completely free.
+吸引更多客户。完全免费。
 
 <ChildTableOfContents :max="2" title="More inside this section" />
