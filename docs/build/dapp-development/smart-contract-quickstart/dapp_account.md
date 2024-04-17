@@ -1,15 +1,15 @@
 ---
-title: Create Accounts
-order: 63
+标题: 创建 账户
+顺序: 63
 ---
 
-# Create Accounts
+# 创建 账户
 
-A WAX Account is stored on the blockchain and used to identify your smart contracts and dApp users. Blockchain accounts are required to send or receive valid transactions to the blockchain, in both your local and production environments. 
+WAX账户储存在链上，用于识别您的智能合约和dApp用户。在本地和生产环境中，发送或接收有效交易到链上都需要使用这些账户。 
 
-## How it Works
+## 如何工作
 
-There are several different account types that you'll need to deploy your smart contracts:
+您需要创建几种不同类型的账户来部署智能合约：
 
 - **Primary Account:** This is your primary WAX Blockchain Account, used to stake WAX for CPU and RAM. Locally, this account is simulated using the **eosio** system user. In your local development environment, you can use this system user to create various accounts. In production, all WAX Accounts are free.
 - **Smart Contract Accounts:** Each of your smart contracts will need a separate account. 
