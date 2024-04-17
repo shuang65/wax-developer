@@ -1,31 +1,31 @@
 ---
-title: Docker Setup
-order: 21
+标题: 安装Docker 
+顺序: 21
 ---
 
-# Docker Setup
+# 安装Docker 
 
-[Docker](https://www.docker.com/) is a container platform that's similar to a virtual machine. Docker allows you to run software, applications, and even operating systems like Ubuntu from an isolated environment. Refer to Docker's [Overview](https://www.docker.com/why-docker) guide to learn more.
+[Docker](https://www.docker.com/)  是一个类似于虚拟机的容器平台。它可以让你在一个独立的环境中运行软件、应用，甚至像 Ubuntu 这样的操作系统。想要了解更多信息，请参考Docker的 [Overview](https://www.docker.com/why-docker) 概述指南。
 
-Our development and production Docker images provide a fast, easy way to run the WAX Blockchain in minutes. You can also use our Docker images to build and deploy smart contracts.
+我们的开发和生产 Docker 镜像让您能够在几分钟内快速、轻松地运行 WAX 区块链。此外，您还可以使用我们的 Docker 镜像来构建和部署智能合约。
 
-Using our Docker environment offers the following benefits:
+使用我们的 Docker 环境具有以下优点：
 
-- Adds convenience and speed to your development efforts
-- Eliminates the need to manage source code
-- Eliminates the need to meet our [Supported Operating Systems](/build/tools/os) requirements
-- Doesn't overwrite an existing installation of Leap
-- Makes it easy to upgrade and try out new features
-- Makes it easy to switch between production and development environments
+- 为您的开发工作提升了速度并增添了便利性。
+- 无需管理源代码。
+- 无需符合我们 [支持的操作系统](/build/tools/os) 要求。
+- 不会覆盖已安装了的 Leap。
+- 使得升级和尝试新功能变得简单。
+- 可以轻松切换生产和开发环境。
 
-## What's Included
+## 包括什么
 
-Below is a list of our core Docker images. For a complete list, refer to [waxteam - Docker Repositories](https://hub.docker.com/u/waxteam).
+以下是我们核心 Docker 镜像的列表。要查看完整列表，请参考 [waxteam - Docker Repositories](https://hub.docker.com/u/waxteam).
 
-| Docker Image | Description |
+| Docker 镜像 | 描述 |
 |--------------|-------------|
-| [waxteam/dev](https://hub.docker.com/r/waxteam/dev) | This **development** image includes everything you need to get the WAX Blockchain up and running. You can use this image to run a WAX node, create a local development environment, and create and compile smart contracts using the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/). |
-| [waxteam/cdt](https://hub.docker.com/r/waxteam/cdt) | Use this image to create and compile smart contracts using the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/). This image does **not** allow you to run a WAX node or use [Blockchain Tools](/build/tools/blockchain_tools). |
-| [waxteam/production](https://hub.docker.com/r/waxteam/production) | It's recommended that you use our [production docker images](https://hub.docker.com/r/waxteam/production) to run a production node. Refer to [Running a WAX node](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/samples/mainnet) for more information. |
+| [waxteam/dev](https://hub.docker.com/r/waxteam/dev) | 这个 **开发** 镜像 包含了启动和运行 WAX 区块链所需的所有内容。 您可以使用此镜像来运行 WAX 节点，创建本地开发环境，并使用 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/)来创建或编译智能合约。
+| [waxteam/cdt](https://hub.docker.com/r/waxteam/cdt) | 使用此镜像可以使用 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/)来创建和编译智能合约。 此镜像 **不** 支持运行WAX节点或使用 [区块链工具](/build/tools/blockchain_tools)。 |
+| [waxteam/production](https://hub.docker.com/r/waxteam/production) | 建议您使用我们的 [production docker 镜像](https://hub.docker.com/r/waxteam/production) 来运行节点。有关更多信息，请参阅 [Running a WAX node](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/samples/mainnet) 。 |
 
 <ChildTableOfContents :max="2" title="More inside this section" />
