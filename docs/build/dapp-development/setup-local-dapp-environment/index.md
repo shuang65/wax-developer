@@ -1,39 +1,39 @@
 ---
-title: Set Up a Local dApp Environment
-order: 40
+标题: 搭建 本地 dApp 环境
+顺序: 40
 ---
 
-# Set Up a Local dApp Environment
+#搭建本地 dApp 环境
 
-Our [Docker Development Image](/build/dapp-development/docker-setup/) includes everything you need to set up a local development environment. This reduces your development costs and offers a fully-functional sandbox for both new and experienced dApp developers. The WAX local testnet allows you to easily:
+我们的 [Docker 开发镜像](/build/dapp-development/docker-setup/) 包含了您搭建本地开发环境所需的所有内容。这降低了您的开发成本，并为新手和经验丰富的dApp开发者提供了一个功能完备的沙盒环境。WAX本地测试网络使您可以轻松的：
 
-- Run a local development node on your server
-- Create free, local accounts to associate with your contract and simulate customers
-- Deploy and test your smart contracts locally
-- Estimate CPU and RAM usage
-- Make local blockchain API calls 
+- 在您的服务器上运行本地开发节点。
+- 创建免费的本地账户，用于关联您的合约和模拟客户。
+- 在本地部署并测试您的智能合约
+- 预估 CPU 和 RAM 的使用量
+- 调用本地区块链的 API。 
 
-## How it Works
+## 如何工作的
 
-To set up your local development environment, you'll need to use three key [Blockchain Tools](/build/tools/blockchain_tools): keosd, nodeos, and cleos.
+设置本地开发环境，您需要使用三个关键的 [区块链工具](/build/tools/blockchain_tools): keosd, nodeos, and cleos.
 
-- **nodeos:** This is the core WAX node daemon, used to run a local node on your server. **nodeos** can be configured with various plug-ins and options.
-- **keosd:** Used to store private keys. This program is automatically started when you initiate **cleos** commands and can start several instances on your local server.
-- **cleos:** Used to interact with your local blockchain and manage local wallets and accounts.
+- **nodeos:** 这是 WAX 的主要节点守护程序，用于在您的服务器上运行本地节点。**nodeos** 可以配置多种插件和选项。
+- **keosd:** 用来存储私钥。当您执行 cleos 命令时，它会自动启动，并且可以在您的本地服务器上启动多个实例。
+- **cleos:** 这个工具用来与本地区块链进行交互，并管理本地钱包和账户。
+  
+当您在启动 **nodeos** 时加入各种开发插件，它会在您的服务器上启动一个本地测试节点并开始生成区块。这些区块会被记录在日志中，您可以从中查看智能合约发起的已签署交易。 
 
-When you start **nodeos** with various development plug-ins, it will launch a local test node on your server and start producing blocks. These blocks are written to a log, allowing you to view signed transactions initiated from your smart contracts. 
+使用内置的开发密钥和系统账户，您还可以： 
 
-Using a built-in development key and system account, you can also: 
+- **创建开发钱包.** 这是创建账户所必需的。
+- **创建合约账户.** 每个智能合约都必须关联到一个账户。
+- **创建测试用户.** 您可以根据需要创建多个本地账户，并为它们充值代币。
 
-- **Create a Development Wallet.** This is required to create accounts.
-- **Create a Contract Account.** Each of your smart contracts must be associated with an account.
-- **Create Test Users.** You can create as many local accounts as you need and fund them with local tokens.
+## 开始之前
 
-## Before You Begin
+在您设置本地开发环境之前：
 
-Before you set up your local development environment:
-
-- You'll need to complete our [Docker Quickstart](/build/dapp-development/docker-setup/) (recommended) or use the [WAX Blockchain Setup](/build/dapp-development/wax-blockchain-setup/) to build from source.
-- Have a text document or note program ready. You'll need to use a wallet password and a public key to create accounts. 
+- 您需要完成我们的[Docker 快速入门](/build/dapp-development/docker-setup/) (推荐) 或使用 [WAX 链设置](/build/dapp-development/wax-blockchain-setup/) 去构建源码。
+- 准备一个文档或记事本程序。创建账户时需要用到钱包密码和公钥。 
 
 <ChildTableOfContents :max="2" title="More inside this section" />
