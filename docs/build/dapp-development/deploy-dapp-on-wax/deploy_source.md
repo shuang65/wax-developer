@@ -37,9 +37,9 @@
     <table>
     <thead>
     <tr>
-    <th style="width: 25%">Parameter</th>
-    <th>Example</th>
-    <th>Description</th>
+    <th style="width: 25%">参数</th>
+    <th>示例</th>
+    <th>描述n</th>
     </tr>
     </thead>
 
