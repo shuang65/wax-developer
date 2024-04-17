@@ -1,38 +1,38 @@
 ---
-title: WAX-CDT Deploy
-order: 73
+标题: 部署WAX-CDT 
+顺序: 73
 ---
 
-# WAX-CDT Deploy
+# 部署WAX-CDT 
 
-In this guide, you'll use the `cleos set contract` command to deploy your smart contract to the WAX mainnet.
+在本指南中， 您将使用 `cleos set contract` 命令将您的智能合约部署到WAX主网。
 
-Before you begin, you'll need to compile your smart contract and have your WASM and ABI files ready. Refer to [Smart Contract Quickstart](/build/dapp-development/smart-contract-quickstart/)or [WAX-CDT Build Tools](/build/dapp-development/wax-cdt/cdt_cpp)for more information.
+开始之前， 您需要编译您的智能合约，并准备好您的WASM和ABI文件。有关更多信息，请参阅 [智能合约快速入门](/build/dapp-development/smart-contract-quickstart/)或 [WAX-CDT 构建 工具](/build/dapp-development/wax-cdt/cdt_cpp) 。
 
-You'll also need to:
+您还需要：
 
-* Create a self-managed WAX Blockchain Account. 
-* Make sure you have enough WAX staked in your account to allocate resources. 
+* 确保您已经创建了一个自主管理的WAX链账户。 
+* 确保您的账户中有足够的WAX去抵押来分配资源。 
 
-To deploy your smart contract to the WAX mainnet:
+要将您的智能合约部署到WAX主网：
 
-1. Open and unlock your wallet. 
+1. 打开并解锁您的钱包。 
 
     ```shell
     cleos wallet open -n mywallet && cleos wallet unlock -n mywallet --password {wallet.pwd}
     ```
 
-2. Generate a public/private key pair that's used to create your smart contract's blockchain account. From the command line, use the `cleos create key` command:
+2. 生成一对公钥/私钥对，用于创建您的智能合约的账户。从命令行使用 `cleos create key` 命令：
 
     ```shell
     cleos wallet create_key -n mywallet
     ```
 
-:::tip
-You can also use an EOSIO compatible wallet (e.g., Scatter).
+:::注意
+您也可以使用 EOSIO 兼容的钱包 (例如， Scatter)。
 :::
 
-3. From the command line, use `cleos system newaccount` to create your smart contract's account. To run this command, you'll need to have the proper authority. This means that the wallet containing your primary account must be opened and unlocked. 
+3. 要创建您的智能合约账户，请在命令行中使用 `cleos system newaccount` 命令。 运行此命令时，您需要具有适当的权限，这意味着您的主账户所在的钱包必须打开并解锁。 
 
     <table>
     <thead>
@@ -100,18 +100,18 @@ You can also use an EOSIO compatible wallet (e.g., Scatter).
     </tbody>
     </table>
 
-    ### Example
+    ### 示例
     ```shell
     cleos -u chain-api-url system newaccount waxdappacct1 HelloWorld10 EOS7jEb46pDiWvA39faCoFn3jUdn6LfL51irdXbvfpuSko86iNU5x --stake-net '0.50000000 WAX' --stake-cpu '0.50000000 WAX' --buy-ram-kbytes 32
     ```
 
-:::tip
-You'll need to repeat Steps 1 and 2 for each of your contracts. 
+:::注意
+每个合约都需要您重复执行第1步和第2步。 
 :::
 
-4. **Deploy.** From the command line, set your contract with the `cleos set contract` command: 
+4. **部署.** F命令行中，使用 `cleos set contract` 设置您的合约： 
 
-    | Parameter | Example | Description
+    | 参数 | 示例 | 描述
     | --- | ----------- | -------------------------- |
     | -u | -u [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers/)| This is the WAX Blockchain URL. |
     | contractAccount| HelloWorld10 | Your smart contract's account (created in Step 2). |
@@ -123,8 +123,8 @@ You'll need to repeat Steps 1 and 2 for each of your contracts.
     cleos -u chain-api-url set contract HelloWorld10 d/wax-blockchain/wax-cdt/mycontracts/wax/build wax.wasm wax.abi
     ```
 
-Your dApp is now live on WAX! 
+您的dApp现在已经在WAX上上线啦！ 
 
-:::tip
-Depending on how your dApp's onboarding process is built, your customers may need to create a WAX Account to use your dApp on WAX.
+:::注意
+根据您的dApp的注册流程，您的客户可能需要在WAX上创建一个WAX账户才能使用您的dApp。
 :::
