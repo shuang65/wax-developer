@@ -39,7 +39,7 @@
     <tr>
     <th style="width: 25%">参数</th>
     <th>示例</th>
-    <th>描述n</th>
+    <th>描述</th>
     </tr>
     </thead>
 
