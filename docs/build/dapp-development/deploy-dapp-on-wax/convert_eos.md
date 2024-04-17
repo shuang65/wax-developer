@@ -1,39 +1,39 @@
 ---
-title: Deploy an EOS dApp on WAX
-order: 10
+标题: 在WAX上部署一个EOS dApp 
+顺序: 10
 ---
 
-# Deploy an EOS dApp on WAX
+# 在WAX上部署一个EOS dApp 
 
-WAX is fully compatible with EOS smart contracts and offers free blockchain accounts and cheaper fees. This guide provides an overview of how to deploy your EOS dApps to the WAX mainnet.
+WAX与EOS智能合约完全兼容，并提供免费的区块链账户和更低的费用。本指南概述了如何将您的EOS dApps部署到WAX主网。
 
-## Blockchain Accounts
+## 区块链账户
 
-1. To deploy your smart contracts to the WAX mainnet, you'll need to create a self-managed WAX Blockchain Account.
+1. 要在WAX主网上部署您的智能合约，您需要创建一个自主管理的WAX链账户。
+   
+3. 确保您的账户有足够的WAX抵押来分配资源。
 
-2. Make sure you have enough WAX staked in your account to allocate resources.
-
-3. If your dApp interacts with blockchain accounts, your customers will also need to create a free, verified WAX Blockchain Account. You can send them to the following link:
+4. 如果您的dApp需要与账户进行交互，您的客户也需要创建一个免费的、经过验证的WAX链账户。您可以将他们引导到以下链接：
 
     <a href="https://all-access.wax.io" target="_blank">http://<span></span>all-access.wax.io</a>
 
-    A Cloud Wallet  Account automatically creates a WAX Blockchain account for your customers and allows you to integrate WaxJS into your dApps. Refer to [Cloud Wallet  Quickstart](/build/cloud-wallet/waxjs/waxjs_qstart)for more information.
+    Cloud Wallet账户会自动为您的客户创建WAX链账户，并允许您将WaxJS集成到您的dApps中。详细信息请参阅 [Cloud Wallet  快速入门](/build/cloud-wallet/waxjs/waxjs_qstart)。
 
-## Development Environment
+## 开发环境
 
-If you'd like to test your smart contracts on WAX, you can:
+如果您想在WAX上测试您的智能合约，您可以：
 
-* Complete our [Docker Quickstart](/build/dapp-development/docker-setup/)(recommended) or use the [WAX Blockchain Setup](/build/dapp-development/wax-blockchain-setup/)to build from source.
-* Build your contracts using the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/.
-* [Set Up a Local dApp Environment](/build/dapp-development/setup-local-dapp-environment/.
-* Deploy to the [WAX Testnet](/build/dapp-development/testnet-quickstart/.
+* 完成我们的 [Docker 快速入门](/build/dapp-development/docker-setup/)(推荐) 或使用 [WAX 链设置](/build/dapp-development/wax-blockchain-setup/)从源代码构建。
+* 使用 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/ 来构建您的合约。
+* [设置本地 dApp 环境](/build/dapp-development/setup-local-dapp-environment/。
+* 部署到 [WAX 测试网](/build/dapp-development/testnet-quickstart/。
 
-:::warning
-Setting up WAX source code in your local development environment will overwrite a current EOS installation. If you'd like to keep your EOS environment, it's recommended that you use Docker, a virtual machine, or a separate development environment.
+:::警告
+在本地开发环境中设置WAX源代码会覆盖当前的EOS安装。如果您想保留EOS环境，如果您想保留EOS环境，请使用Docker、虚拟机或另一个独立的开发环境。
 :::
 
-## Deploy Your Smart Contracts
+## 部署到您的智能合约
 
-You must compile your smart contracts using the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/.
+您必须使用 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/来编译您的智能合约。
 
-If you don't want to install the WAX source code, you can use our [Docker Quickstart](/build/dapp-development/docker-setup/)or custom scripts to deploy your smart contracts. Refer to [Deploy Your dApp on WAX](/build/dapp-development/deploy-dapp-on-wax/)for more information.
+如果您不想安装WAX源代码，您可以使用我们的 [Docker 快速入门](/build/dapp-development/docker-setup/)或自定义脚本来部署您的智能合约。有关更多信息，请查阅 [在 WAX上部署您的dApp](/build/dapp-development/deploy-dapp-on-wax/).
