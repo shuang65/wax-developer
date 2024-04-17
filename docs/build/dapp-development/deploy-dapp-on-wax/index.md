@@ -1,19 +1,19 @@
 ---
-title: Deploy Your dApp on WAX
-order: 70
+标题: 在WAX上部署您的dApp
+顺序: 70
 ---
 
-# Deploy Your dApp on WAX
+# 在WAX上部署您的dApp
 
-To deploy your dApp on WAX, you'll need to use [WAX-CDT](/build/dapp-development/wax-cdt/)and [Blockchain Tools](/build/tools/blockchain_tools)to:
+要在WAX上部署您的dApp，您需要使用 [WAX-CDT](/build/dapp-development/wax-cdt/)and [区块链工具](/build/tools/blockchain_tools)，进行以下操作:
 
-- Compile your smart contracts
-- Create WAX Blockchain Accounts for each of your contracts
-- Deploy your smart contracts to the WAX Blockchain
+- 编译您的智能合约
+- 为每个合约创建一个WAX账户
+- 部署您的智能合约到WAX链
 
-WAX provides two ways to accomplish these deployment steps. You can use our custom **make** scripts (recommended for EOS developers) or use WAX-CDT tools from your local Docker container or installation. Below is a list of benefits and requirements for each option.
+WAX提供两种部署方式。您可以使用我们的自定义 **make** 脚本 (适合 EOS 开发者) ，也可以在本地Docker容器或安装中使用WAX-CDT工具。下面是各种方式的优势和要求。
 
-## Custom Deploy Scripts
+## 自定义部署脚本
 
 The <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Source Code Repository</a> includes a **hello-world** sample contract, along with **make** scripts that provide an easy, automated way to build and deploy your smart contracts. These scripts use the <a href="https://hub.docker.com/r/waxteam/dev" target="_blank">WAX Docker Development image</a> to:
 
