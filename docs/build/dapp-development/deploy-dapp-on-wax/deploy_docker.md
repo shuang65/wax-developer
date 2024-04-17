@@ -32,66 +32,66 @@
 
 4. 在 **wax_deploy**文件夹中， 打开 **CMakeLists.txt**。 这个文件存储了您的项目名称和智能合约文件名称。
 
-    a. Type your contract name on line 25.
+    a. 在第25行输入您的合约名称。
     ```shell
     project(waxcontract)
     ```
 
-    b. Type your contract's filename on line 29.
+    b. 在第29行输入您的合约文件名。
 
     ```shell
     add_contract(${PROJECT_NAME} ${PROJECT_NAME} waxcontract.cpp)
     ```
 
-    Save the file. 
+    保存文件。 
 
 5. 然后， 打开 **Makefile**。这个文件包含运行 `cleos` 和WAX Docker开发镜像的脚本。
 
-    a. Type your contract name on Line 23.
+    a. 在第23行输入您的合约名称。
     ```shell
     CONTRACT_NAME = waxcontract
     ```
 
-    b. Update the WAX allocations for your smart contract on Line 87, if required.
+    b. 如果需要，您可以在第87行更新您的智能合约的WAX分配。
     ```shell
     --stake-net '0.50000000 WAX' --stake-cpu '0.50000000 WAX' --buy-ram-kbytes 32"
     ```
 
-    c. To test your smart contract, you can update line 48 to run your action:
+    c. 要测试您的智能合约，您可以更新第48行以运行您的操作：
 
     ```shell
     push action ${CONTRACT_ACCOUNT} greet '[]' -p ${CONTRACT_ACCOUNT}@active"
     ```
 
-    Save the file.
+    保存文件。
 
 :::提示
 `NODEOS_URL` 是唯一的可选参数。 默认情况下是主网部署地址 [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers/.  
 :::
 
-Once these changes have been made, you're ready to use the `make` scripts to build and deploy your smart contract.
+完成这些更改后，您就可以使用 `make` 脚本来构建和部署您的智能合约了。
 
-## Deploy Your Smart Contract
+## 部署您的智能合约
 
-To launch your WAX smart contract on the WAX Blockchain:
+要在WAX链上启动您的WAX智能合约：
 
-1. **Build your smart contract.** In the command line, run the following script from the **wax_deploy** folder:
+1. **构建您的智能合约.** 在命令行中， 从 **wax_deploy** 文件夹运行以下脚本:
 
     ```shell
     make build
     ```
 
-    This creates `wax.wasm` and `wax.abi` in the **wax_deploy** folder.
+    这将在**wax_deploy**文件夹中创建 `wax.wasm` 和 `wax.abi` 文件。
 
-2. **Generate keys for your smart contract's account.** From the command line, run:
+2. **为您的智能合约生成密钥.** 从命令行运行：
 
     ```shell
     make create-key
     ```
 
-    This creates a pair of private/public keys for your smart contract's account (save the console response in a safe place, you'll need to use them later).
+    这将为您的智能合约账户创建一对私钥/公钥（并将控制台响应保存在安全的地方，您稍后会需要使用它们）。
 
-4. **Create a WAX Contract Account.** To create a blockchain account for your smart contract, run:
+4. **创建WAX合约账户.** 要为您的智能合约创建一个账户，请运行：
 
     <table>
     <thead>
@@ -133,7 +133,7 @@ To launch your WAX smart contract on the WAX Blockchain:
     make create-account WAX_ACCOUNT=waxprimary WAX_PRIVATE_KEY=5JTZaN1zabi5wyC3LcdeZG3AzF7sLDX4JFqMDe68ThLC3Q5nYez CONTRACT_ACCOUNT=waxsc1 CONTRACT_PUBLIC_KEY=EOS4yxqE5KYv5XaB2gj6sZTUDiGzKm42KfiRPDCeXWZUsAZZVXk1F
     ```
 
-5. **Deploy your contract.** From the command line, run: 
+5. **部署到您的合约.** 从命令行运行: 
 
     <table>
     <thead>
@@ -165,15 +165,15 @@ To launch your WAX smart contract on the WAX Blockchain:
 
     This deploys your smart contract to the mainnet. You only need to pass your smart contract's account name and private key.
 
-5. **Test your smart contract.** From the command line, run:
+5. **测试您的智能合约.** 从命令行运行:
 
     ```shell
     make test CONTRACT_ACCOUNT=waxsc1
     ```
 
-Your dApp is now live on WAX! 
+您的dApp现在已经在WAX上成功上线啦！ 
 
-:::tip
-Depending on how your dApp's onboarding process is built, your customers may need to create a WAX Account to use your dApp on WAX.
+:::注意
+根据您的dApp的注册流程，您的用户可能需要创建一个WAX账户才能在WAX上使用您的dApp。
 :::
 
