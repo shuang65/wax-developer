@@ -5,25 +5,25 @@
 
 # 创建 账户
 
-WAX账户储存在链上，用于识别您的智能合约和dApp用户。在本地和生产环境中，发送或接收有效交易到链上都需要使用账户。 
+WAX账户储存在链上，用于识别您的智能合约和dApp用户。在本地生产环境中，发送或接收有效交易到链上都需要使用账户。 
 
 ## 如何工作
 
 您需要创建几种不同类型的账户来部署智能合约：
 
-- **Primary Account:** This is your primary WAX Blockchain Account, used to stake WAX for CPU and RAM. Locally, this account is simulated using the **eosio** system user. In your local development environment, you can use this system user to create various accounts. In production, all WAX Accounts are free.
-- **Smart Contract Accounts:** Each of your smart contracts will need a separate account. 
-- **Customer Accounts:** These are the accounts used to interact with your smart contract's actions. In your local development environment, you can create an unlimited number of customer accounts.
+- **主账户:** 您的WAX主账户， 用于抵押WAX获取CPU和RAM资源。 在本地开发环境中，此账户是通过 **eosio** 系统用户模拟的。您可以使用此系统用户在本地开发环境中创建各种类型的账户。在生产环境中，所有WAX账户都是免费的。
+- **智能合约账户:** 每个智能合约都需要一个独立的账户。 
+- **客户账户** 这些账户用于与您的智能合约进行交互。在本地开发环境中，您可以创建无数个客户账户。
 
-In this guide, you'll use **cleos** to create a new WAX Blockchain Account that you can use to deploy your smart contract.
+在这个指南中，您将使用 **cleos** 创建一个 WAX 链账户，用于部署您的智能合约。
 
-:::tip
-For a complete list of cleos create account subcommands and options, refer to <a href="https://docs.eosnetwork.com/leap/latest/cleos/command-reference/create/account" target="_blank">Cleos Reference Guide: create account</a>.
+:::提示
+要查看 cleos create account 的所有子命令和选项， 请参考 <a href="https://docs.eosnetwork.com/leap/latest/cleos/command-reference/create/account" target="_blank">Cleos 参考指南:创建账户</a>.
 :::
 
-## Before You Begin
+## 开始之前
 
-- **nodeos** must be running 
+- **节点** 必须正在运行 
     ```shell
     nodeos -e -p eosio \
         --plugin eosio::producer_plugin \
@@ -34,7 +34,7 @@ For a complete list of cleos create account subcommands and options, refer to <a
         --http-validate-host=false \
         --verbose-http-errors >> nodeos.log 2>&1 &
     ```
-- Your wallet must be Opened and Unlocked
+- 您的钱包必须是打开并处于解锁的状态
     ```shell
     cleos wallet open
     ```
@@ -51,43 +51,43 @@ Ensure that you have created a wallet and have it open
 Error Details:
 You don't have any wallet!-->
 
-## Create Public/Private Keys
+## 生成公/私钥
 
-Every WAX Account must have at least one public key. There are two types of public keys, based on account permissions:
+每个 WAX 账户都需要至少一个公钥。公钥有两种类型，根据账户权限而定：
 
-- **Owner Key:** Required. This is the primary public key, with full permissions and complete control. In a production account, you should never give this out for most transactions. This key has a private/public key record in your local wallet.
-- **Active Key:** Optional. This is a secondary key, which can be changed by the Owner key. It requires an additional private/public key pair listed in your local wallet. In production, use this key to vote, send, and receive transactions.
+- **Owner Key:** 必需的。这是主要的公钥，具有完整的权限和完全的控制权。在生产账户中，您不应将此公钥用于大多数交易。此公钥在您的本地钱包中有一个私钥/公钥记录
+- **Active Key:** 可选的。这是次要的，该密钥可以由Owner密钥更改。它需要额外的私钥/公钥对，可以在您的本地钱包中找到。在生产中，可以使用此密钥进行投票、发送和接收交易。
 
-To create an account for your smart contract, you'll need to create a public and private key pair from your local development wallet. You can do this using your wallet's `create_key` command:
+当您要为智能合约创建一个账户时，需要在本地的开发钱包中生成一个公钥和私钥对。您可以通过钱包的 `create_key` 命令来完成:
 
-:::tip
-Your wallet must be opened and unlocked to create your keys.
+:::提示
+为了创建密钥对，您需要确保您的钱包已打开并解锁。
 :::
 
 ```shell
 cleos wallet create_key
 ```
 
-The console prints your public key:
+控制台输出您的公钥:
 
 ```shell
 warn  2019-07-16T23:16:23.435 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /home/username/eosio-wallet/./default.wallet
 Created new private key with a public key of: "EOS4yxqE5KYv5XaB2gj6sZTUDiGzKm42KfiRPDCeXWZUsAZZVXk1F"
 ```
 
-Store this key someplace that's easily accessible (you'll need this public key in the next step).
+把这个公钥存放在一个容易找到的地方（下一步会需要这个公钥）。
 
-## Create a Smart Contract Account
+## 创建智能合约账户
 
-To create a smart contract WAX Account, use the `create account` command:
+要创建一个WAX智能合约账户，请使用 `create account` 命令:
 
-| Parameter | Example | Description
+| 参数 | 示例 | 描述
 | --- | ----------- | -------------------------- |
-| creator | eosio | The name of the primary account creating the new account. In production, this is your WAX Account. |
-| name | waxsc1 | The name of the new account. Account names must be less than 13 characters and only contain letters [a-z] and numbers [1-5]. |
-| OwnerKey | EOS4yxqE5KYv5XaB2gj6sZTUDiGzKm42KfiRPDCeXWZUsAZZVXk1F | Public key, created from your local development wallet. |
+| creator | eosio | 这个参数是用来创建新账户的主要账户名称。在生产环境中，这个主要账户就是您的 WAX 账户。 |
+| name | waxsc1 | 新账户的名称。账户名称必须少于13个字符，并且只能包含字母[a-z]和数字[1-5]。 |
+| OwnerKey | EOS4yxqE5KYv5XaB2gj6sZTUDiGzKm42KfiRPDCeXWZUsAZZVXk1F | 公钥是您从本地开发钱包生成的。 |
 
-### Example
+### 示例
 
 ```shell
 cleos create account eosio waxsc1 EOS4yxqE5KYv5XaB2gj6sZTUDiGzKm42KfiRPDCeXWZUsAZZVXk1F 
@@ -103,15 +103,15 @@ warning: transaction executed locally, but may not be confirmed by the network y
 
 You should now have a WAX Blockchain Account to associate with your smart contract.
 
-## Verify Your New Account
+## 验证您的新账户
 
-To view your new account's information, use the `get account` command:
+要查看新账户的信息，请使用  `get account` 命令:
 
 ```shell
 cleos get account waxcustomer
 ```
 
-The console prints your new account's details. Notice that the owner and active keys are the same because we didn't include an active public key when we created the account.
+控制台输出您新账户的详细信息。 请注意，因为我们在创建账户时没有更改active公钥，所以owner和active的密钥是相同的。
 
 ```shell
 created: 2019-07-22T20:22:16.000
