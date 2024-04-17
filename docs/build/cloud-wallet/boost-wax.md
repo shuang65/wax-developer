@@ -1,68 +1,69 @@
 ---
-title: boost.wax
+标题: boost.wax
 ---
 
 # boost.wax
 
-This contract registers other contracts that wish to have WAX apply extended management over CPU and Net for their Cloud Wallet  users.
+该合约记录了其他合约，让它们能够让 WAX 对其 Cloud Wallet用户的 CPU 和网络进行扩展管理。 
 
-Deployed to: [boost.wax](https://wax.bloks.io/account/boost.wax)
+部署到: [boost.wax](https://wax.bloks.io/account/boost.wax)
 
 
-## Cloud Wallet  Resource Model
+## Cloud Wallet  资源模型
 
-The resource allocation model for Cloud Wallet  accounts was designed to be based on account activity. Instead of allocating resources to each Cloud Wallet  account at the time of creation, the new resource model allocates necessary resources to each account at the time of executing and signing of a transaction. These resources are then reclaimed. This new model allows for pooling resources from accounts that are less active at the moment and use those resources to boost activity of active accounts. This new boost system is designed as a tiered resource pool system with two resource tiers being checked first for available bandwidth before a user would be required to provide resources to complete a transaction from their own WAXP resource stake.
+Cloud Wallet账户的资源分配模型基于账户活动设计。与在创建时为每个Cloud Wallet账户分配资源不同，新的资源模型在执行和签署交易时为每个账户分配必要的资源，然后将这些资源收回。这个新模型允许从活跃度较低的账户中汇集资源，用于增强活跃账户的活动。该新提升系统设计为分层资源池系统，在用户需要提供资源之前，首先检查两个资源层的可用带宽。
 
-### dApp Boost Resource Pool Tier
+### dApp Boost 提升资源池层级
 
-Cloud Wallet  will allocate up to 5 seconds of CPU and 5M words of NET bandwidth per dApp in a given 24h period; This equals to about 10000 boosted actions per dApp in that time period assuming 0.5 ms average action resource cost. The parameters of the dApp boost resource pool may be adjusted over time as more utilization data becomes available.
+在24小时内，Cloud Wallet将为每个dApp分配高达5秒的CPU时间和5M字节的NET带宽；这相当于每个dApp在该时间段内进行约10000次提升操作，假设平均动作资源成本为0.5毫秒。dApp提升资源池的参数可能会随着时间调整，以便更好地利用数据。
    
-Additionally, each dApp can contribute their own WAXP to extend its dApp boost resource pool. dApp smart contract must have a permission called paybw, and it must be linked to the boost.wax#noop action. Furthermore, it must have a 1 of 1 authority using the account@permission boost.wax@paybw. As an example see the [test.wax@paybw permission](https://wax.bloks.io/account/test.wax#keys).
+另外，每个dApp可以通过投入自己的WAXP来增加其dApp提升资源池。 ddApp智能合约必须具有一个名为paybw的权限，并且必须链接到boost.wax#noop动作。此外，它必须具有使用账户@权限boost.wax@paybw的1对1权限。例如，请查看 [test.wax@paybw permission](https://wax.bloks.io/account/test.wax#keys).
    
-When initial dApp boost resource pool tier is exceeded, the Cloud Wallet  will sign for dApps users using this permission if it has sufficient CPU and NET allocated to its contract's account. Each dApp needs to also configure its dApp boost resource pool allocation per user via boost.wax smart contract via [this action](https://wax.bloks.io/account/boost.wax?loadContract=true&tab=Actions&account=boost.wax&scope=boost.wax&limit=100&action=reg).
 
-If dApp pool has available resources then Cloud Wallet  will boost users' transactions from that dApp pool and decrement the pool metering accordingly.
+当初始dApp的提升资源池层级被超出时，Cloud Wallet将会代表dApp用户进行签名，前提是Cloud Wallet的合约账户有足够的CPU和NET分配。 每个dApp还需要通过boost.wax智能合约的 [这个操作](https://wax.bloks.io/account/boost.wax?loadContract=true&tab=Actions&account=boost.wax&scope=boost.wax&limit=100&action=reg) 来配置每个用户的dApp提升资源池分配。
+
+如果dApp池有可用资源，Cloud Wallet会使用dApp池中的资源来增强用户的交易，并相应地减少池中的资源。
    
-Cloud Wallet  team reserves the right to disable dApp Boost Resource Pool for a given dApp.
+Cloud Wallet团队保留在特定dApp中禁用dApp提升资源池的权利。
 
-### User Boost Resource Pool Tier
+### 用户提升资源池层级
 
-Cloud Wallet  will allocate up to 5 ms of CPU and 5k words of NET bandwidth per each user in a given 24h period. This equals to about 10 boosted actions per user in that time period assuming 0.5 ms average action resource cost. The parameters of the User Boost Resource Pool may be adjusted over time as more utilization data becomes available.
+在给定的24小时时间段内，Cloud Wallet会为每个用户分配高达5毫秒的CPU时间和5千字节的NET带宽。这相当于每个用户在该时间段内进行约10次提升操作，假设平均动作资源成本为0.5毫秒。用户提升资源池的参数可能会随着更多利用数据的可用性而调整。
 
-Both dApp Boost Resource Pool Tier and User Boost Resource Pool Tier must have resources in order for an action to be boosted by the new Cloud Wallet  resource mechanism. If either dApp Boost Resource Pool or User Boost Resource Pool has been exhausted then Cloud Wallet  will switch to using resources from the dApp’s own staked resources, and if the user has exceeded the dApp’s configured 24 hour bandwidth limit, WCW will switch to using the user’s staked resources.
+当dApp提升资源池层级和用户提升资源池层级都有足够资源时，Cloud Wallet新的资源机制才能提升操作。如果dApp或用户提升资源池中的资源用尽，Cloud Wallet将转而使用dApp自身的抵押资源；同时，如果用户超过了dApp配置的24小时带宽限制，Cloud Wallet将使用用户的抵押资源。
 
-::: info
+::: 信息
 ![alt text](https://github.com/worldwide-asset-exchange/boost.wax/blob/master/BoostDecisionTree.png?raw=true)
 :::
 
-This boost system allows for controlled resource metering, ensuring that each user has a necessary resource baseline enabling them to participate in NFT based activities like pack drops, pack opening, crafting, NFT buying and selling, and trading regardless of the current resource cost on the network.
+这个提升系统可以控制资源使用，确保每个用户有足够的资源，可以参与基于NFT的活动，如卡包发放、开启、制作、NFT的购买、销售和交易，而不受网络上当前资源成本的影响。
 
 ### RAM Boost
 
-WCW creates new accounts with the bare minimum RAM to successfully create each account. So that users can still execute transactions requiring RAM, WCW boosts RAM for any transaction that is successfully boosted for bandwidth under the paid by WAX tier. Currently WAX will fund up to 4096 bytes total account RAM including that required for account creation for any of these transactions. In the future, RAM boosts will available for the dApp paid tiers which will be paid by the relevant dApps if a transaction does not qualify for boosting under the WAX paid/user boost tier.
+WCW创建新账户时，会提供刚好足够成功创建一个账户所需的最少RAM。这样，即使用户需要执行需要RAM的交易，WCW也会为在由WAX支付的带宽提升层级下成功提升带宽的交易增加RAM。目前，WAX将资助最多4096字节的账户RAM，包括账户创建所需的RAM。未来，RAM提升将适用于dApp付费层级，如果一笔交易不符合WAX支付/用户提升层级下的提升条件，则由相关dApps支付。
 
 ## API
 
 * [`reg(name contract, uint64_t cpu_us_per_user, uint64_t net_words_per_user, bool use_allow_list, vector<name> allowed_contracts)`](https://wax.bloks.io/account/boost.wax?loadContract=true&tab=Actions&account=boost.wax&scope=boost.wax&limit=100&action=reg)
 
-   Register your contract for bandwidth management.  
-   * `contract`: the contract account to register. Must also be the account calling this action.  
-   * `cpu_us_per_user`: amount of cpu in microseconds to provide your users over a 24 hour period.  
-   * `net_words_per_user`: amount of net in microseconds to provide your users over a 24 hour period.  
-   * `use_allow_list`: turn allow list enforcement on or off.
-   * `allowed_contracts`: vector of contract name that are permitted to be in transactions accompanying your contract. Must have use_allow_list == true for these to be enforced. The idea is to prevent abuse by dapps that might sneak one of your contract actions into their transactions in order to take advantage of your bandwidth quota. By listing the cotnracts you accept in your contract's transactions, you will only pay with your own cpu+net if all transaction contracts are contained in this list.  
+   请注册您的合约以进行带宽管理。  
+   * `contract`: 必须是调用此操作的账户本身来注册合约账户。  
+   * `cpu_us_per_user`: 您可以为用户在24小时内提供的CPU时间量，单位是微秒。  
+   * `net_words_per_user`: 您可以为用户在24小时内提供的NET带宽量，单位是微秒。  
+   * `use_allow_list`: 切换白名单执行的开关。
+   * `allowed_contracts`: 以下是允许出现在您合约伴随交易中的合约名称的向量。这些合约必须设置 use_allow_list 为 true 才会被执行。这样做的目的是防止一些dApp滥用您合约的行为，将它们偷偷放入自己的交易中，以占用您的带宽配额。 当您在合约中列出接受的合约时，只有包含在这个列表中的所有交易合约，才会由您自己的cpu+net支付。  
    
-  ::: info Note
-    your contract must have a permission called **paybw**, and it must be linked to the **boost.wax**#**noop** action. Furthermore, it must have a 1 of 1 authority usuing the account@permission `boost.wax@paybw`. As an example see the [test.wax@paybw permission](https://wax.bloks.io/account/test.wax#keys). When the free tier is exceeded, the WAX backend will sign for your users using this permission if you have sufficient CPU and Net allocated to your contract's account.
+  ::: 注意
+    当您的合约超出免费层级时，WAX后端会为您的用户签名，前提是您的合约账户有足够的CPU和NET。为此，您的合约必须有一个名为 **paybw**的权限， 链接到 **boost.wax**的**noop** 动作。 并且必须具有1对1的权限，使用账户@权限 `boost.wax@paybw`。 您可以参考 [test.wax@paybw permission](https://wax.bloks.io/account/test.wax#keys)。
   :::
    
 * **[`dereg(name contract`)](https://wax.bloks.io/account/boost.wax?loadContract=true&tab=Tables&account=boost.wax&scope=boost.wax&limit=100&action=dereg)**: 
 
-   Deregister your contract from bandwidth management.  
+   取消您合约的带宽管理注册。  
    
 * **[`noop()`](https://wax.bloks.io/account/boost.wax?loadContract=true&tab=Tables&account=boost.wax&scope=boost.wax&limit=100&action=noop)**: 
 
-   No-op action inserted into Cloud Wallet  transactions that satisfy bandwidth management crtieria.  
+   在满足带宽管理条件的Cloud Wallet交易中，会插入一个空操作。（No-op action）  
 
 * **`boost(name from, name to, asset cpu, asset net)`**: *Deprecated*
 * **`updateboost(name from, name to, asset cpu_to, asset net_to)`**: *Deprecated*
