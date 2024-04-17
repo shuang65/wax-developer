@@ -98,10 +98,10 @@ cleos create account eosio waxsc1 EOS4yxqE5KYv5XaB2gj6sZTUDiGzKm42KfiRPDCeXWZUsA
 ```shell
 executed transaction: 4ebdc2eabcd545c7f26679e95d729893ebd0df919850791daa79a10e4865f702  200 bytes  15013 us
 #         eosio <= eosio::newaccount            {"creator":"eosio","name":"waxsc1","owner":{"threshold":1,"keys":[{"key":"EOS4yxqE5KYv5XaB2gj6sZTUDi...
-warning: transaction executed locally, but may not be confirmed by the network yet         ]
+警告: 交易已在本地执行，但可能尚未被网络确认。         ]
 ```
 
-You should now have a WAX Blockchain Account to associate with your smart contract.
+现在您已经有一个与您的智能合约相关联的WAX链账户了。
 
 ## 验证您的新账户
 
