@@ -1,5 +1,5 @@
 ---
-title: Create and Mint a Fungible Token
+标题: Create and Mint a Fungible Token
 order: 10
 ---
 
