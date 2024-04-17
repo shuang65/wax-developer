@@ -1,9 +1,9 @@
 ---
-标题: dfuse为WAX链上的去中心化应用（dApps）提供了支持
+标题: dfuse为WAX链上的去中心化应用（dApps）提供支持
 顺序: 120
 ---
 
-#  dfuse为WAX链上的去中心化应用（dApps）提供了支持
+#  dfuse为WAX链上的去中心化应用（dApps）提供支持
 
 [dfuse](https://dfuse.eosnation.io) 是为 WAX 去中心化应用（dApp）开发者设计的一套强大的 API。dfuse 平台使您可以轻松执行搜索、实时数据流和向 WAX 链推送交易。
 
