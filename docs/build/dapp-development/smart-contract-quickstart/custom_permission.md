@@ -1,6 +1,6 @@
 ---
-title: Custom Permissions
-order: 63
+标题: 自定义权限
+顺序: 63
 ---
 
-# Custom Permissions
+# 自定义权限
