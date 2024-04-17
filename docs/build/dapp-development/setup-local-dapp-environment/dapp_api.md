@@ -1,15 +1,16 @@
 ---
-title: Access Your Local API
-order: 42
+标题: 访问本地 API
+顺序: 42
 ---
 
-# Access Your Local API
+# 访问本地 API
 
-The WAX mainnet exposes a set of **nodeos** API endpoints (RPC API), allowing you to interact with the WAX Blockchain. Commonly known as [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers)
+WAX主网提供了一组 **nodeos** API 端点 (RPC API)， 允许您与 WAX 链进行交互。这些端点通常被称为 [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers) 。
 
-Now that you have a local node running on your local development server, these endpoints can be accessed from your local IP address: `http://127.0.0.1:8888`. This API endpoint is initialized when you pass the `plugin eosio::chain_api_plugin` parameter to **nodeos**.
 
-To test your local RPC API, from the command line, make a **curl** request to the `get_info` endpoint:
+当您在本地开发服务器上运行一个本地节点时，您可以通过本地 IP 地址: `http://127.0.0.1:8888`访问这些端点。 这个 API 端点是在您向 **nodeos**传递 `plugin eosio 传递 chain_api_plugin`参数时初始化的。
+
+测试本地 RPC API，请在命令行中使用 **curl**向 `get_info` 端点发出请求:
 
 ```
 curl --request POST \
@@ -17,7 +18,7 @@ curl --request POST \
   --header 'content-type: application/x-www-form-urlencoded; charset=UTF-8'
 ```
 
-You should receive the following JSON Response:
+您应该会收到以下 JSON 响应：
 
 ```
 {
@@ -37,16 +38,16 @@ You should receive the following JSON Response:
 }
 ```
 
-:::tip
-Notice the "head_block_producer":"eosio" parameter. Locally, <strong>eosio</strong> is the system account. If you make a request to the WAX mainnet API, it would return an actual block producer (e.g., "head_block_producer": "strongblock1").
+:::提示
+请注意 "head_block_producer":"eosio" 参数。 在本地， <strong>eosio</strong> 是系统账户。 如果您向 WAX 主网 API 发出请求，它会返回一个实际的区块生产者 (例如， "head_block_producer": "strongblock1").
 :::
 
-**nodeos** must be running to call this endpoint. If not, you'll receive the following message:
+要调用此端点，**nodeos**  必须正在运行。否则，您将收到以下消息：
 
 ```
 curl: (7) Failed to connect to 127.0.0.1 port 8888: Connection refused
 ```
 
-## Additional Information
+## 附加信息
 
-Refer to [WAX RPC API](/build/api-reference/rpc_api) for more information.
+请参考 [WAX RPC API](/build/api-reference/rpc_api) 获取更多信息。
