@@ -1,25 +1,25 @@
 ---
-title: WAX Contract Development Toolkit
-order: 50
+标题: WAX 合约开发工具包
+顺序: 50
 ---
 
-# WAX Contract Development Toolkit
+# WAX 合约开发工具包
 
-The <a href="https://github.com/worldwide-asset-exchange/wax-cdt" target="_blank">WAX Contract Development Toolkit (WAX-CDT)</a> includes a C/C++ API and a <a href="https://clang.llvm.org/" target="_blank">Clang</a> based set of tools used to build and deploy your smart contracts.
+<a href="https://github.com/worldwide-asset-exchange/wax-cdt" target="_blank">WAX 合约开发工具包 (WAX-CDT)</a> 包含了 C/C++ API 和基于 <a href="https://clang.llvm.org/" target="_blank">Clang</a> 的一组工具，用于构建和部署您的智能合约。
 
-WAX-CDT tools are included in the **waxteam/dev** Docker image, and we also provide a standalone **waxteam/cdt** Docker image. To start an interactive WAX-CDT container, you can use the following commands:
+WAX-CDT 工具包包含在 **waxteam/dev** Docker 镜像中， 我们还提供了一个单独的 **waxteam/cdt** Docker 镜像。要启动一个交互式的WAX-CDT容器，您需要使用以下命令：
 
 ```shell run -it --name waxcdt -v /var/share/wax:/wax waxteam/cdt bash```
 
-Refer to our [Docker Quickstart](/build/dapp-development/docker-setup/) for more information.
+请参阅我们的 [Docker 快速入门](/build/dapp-development/docker-setup/) 获取更多信息。
 
-If you'd like to access our sample contracts and scripts from your local drive or have a need to install WAX-CDT instead of using Docker, you can use this guide to download and optionally build the WAX-CDT source code.
+如果您想从本地驱动器访问我们的示例合约和脚本，或者选择安装WAX-CDT而不是使用Docker，您可以使用这个方法下载并选择性的构建WAX-CDT源代码。
 
-:::warning
-Important: At this time, pre-compiled packages are not available. Support is <strong>not</strong> available when you build WAX-CDT from source.
+:::警告
+重要: 目前还没有提供预编译的软件包。如果您从源代码构建WAX-CDT，则无法获得帮助。
 :::
 
-## What's Included
+## 包括什么
 
 - A [C/C++ API library](/build/api-reference/cdt_api) to communicate with the WAX Blockchain
 - Sample smart contracts to jumpstart your dApp development
