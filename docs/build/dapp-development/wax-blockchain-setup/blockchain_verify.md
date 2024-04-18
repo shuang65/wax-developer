@@ -1,22 +1,22 @@
 ---
-title: Verify Your Installation
-order: 32
+标题: 验证您的安装
+顺序: 32
 ---
 
-# Verify Your Installation
+# 验证您的安装
 
-To verify your installation, you can use **cleos** to call the `get info` endpoint on the WAXBlockchain API. 
+要验证您的安装，可以使用 **cleos** 调用 WAXBlockchain API上的`get info`端点。
 <p>&nbsp;</p>
 
-From the command line, enter the following:
+在命令行输入以下内容：
 
 ```shell
 cleos -u https://wax-api-url get info
 ```
-*Check https://validate.eosnation.io/wax/reports/endpoints.html to get an updated API endpoint URL*
+*查看https://validate.eosnation.io/wax/reports/endpoints.html 以获取最新的 API 端点 URL*
 <p>&nbsp;</p>
 
-If the [Blockchain Tools](/build/tools/blockchain_tools) installed successfully, this endpoint will return various details about the WAX Blockchain, including the `chain_id`, block producer, and most recent block height.
+如果 [区块链工具](/build/tools/blockchain_tools) 安装成功，这个端点将返回关于WAX链的各种信息，包括 `chain_id`，区块生产者和最新区块高度。
 
 ![](/assets/images/dapp-development/docker-setup/docker_results.jpg)
 
