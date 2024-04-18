@@ -1,59 +1,57 @@
 ---
-title: Install the WAX Blockchain
-order: 31
+标题: 安装 WAX 链
+顺序: 31
 ---
 
-# Install the WAX Blockchain
+# 安装 WAX 链
 
-The GitHub WAX Blockchain Source Code Repository downloads to the **wax-blockchain** directory. The download and build process can take several minutes to several hours, depending on your Internet connection, operating system, and hardware specifications.
+将GitHub上的WAX链源代码存储库会下载到 **wax-blockchain** 目录中。下载和构建过程可能需要几分钟到几个小时不等，这取决于您的网络、操作系统和硬件规格。
 
-To download the WAX Blockchain Source Code Repository:
+要下载WAX链源代码存储库：
 
-1. From the command line, clone the Git repository.
-
+1. 在命令行中，使用Git克隆存储库
     ```shell
     git clone https://github.com/worldwide-asset-exchange/wax-blockchain.git
     ```
 
-2. Change the directory to **wax-blockchain**.
+2. 切换到 **wax-blockchain**目录。
 
     ```shell
     cd wax-blockchain
     ```
 
-3. Update Git submodules.
+3. 更新 Git 子模块。
 
     ```shell
     git submodule update --init --recursive
     ```
 
-## Build the WAX Blockchain
+## 构建WAX链
 
-If you're using our Docker images, you do **not** need to complete these steps.
+如果您正在使用我们的Docker镜像， 则 **无需** 完成这些步骤。
 
-To build the WAX Blockchain from source, you can use the following steps. If you have a previous version installed, you'll need to uninstall it first. Refer to [Uninstall WAX](/build/dapp-development/wax-blockchain-setup/blockchain_uninstall) for more information.
+要从源代码上构建WAX链，可以使用以下步骤。如果已经安装了先前的版本，您需要先卸载它。请参考[卸载 WAX](/build/dapp-development/wax-blockchain-setup/blockchain_uninstall) for 获取更多信息。
 
-:::warning
-Important: Refer to [Known Issues](/build/troubleshooting/) if you encounter an issue with the build or use our [Docker Images](/build/dapp-development/docker-setup/) instead (recommended). Building from source is not supported. 
+:::警告
+重要： 如果您在构建过程中遇到问题，请参考 [已知问题](/build/troubleshooting/) 。建议使用 [Docker 镜像](/build/dapp-development/docker-setup/) ，但不支持从源代码构建。 
 :::
 
-1. Run the build script and set the installation directory. 
+1. 执行构建脚本，并设置安装目录。 
 
     ```shell
     ./wax_build.sh -i ~/wax-blockchain
     ```
 
-:::tip
-This installs [Blockchain Tools](/build/tools/blockchain_tools) to the <strong>wax-blockchain/bin</strong> directory.
+:::提示
+会安装到 [区块链工具](/build/tools/blockchain_tools) to the <strong>wax-blockchain/bin</strong> 目录中。
 :::
 
-2. Install WAX to the directory you set in Step 4.
-
+2. 将WAX安装到您在第4步中设置的目录中。
     ```shell
     ./wax_install.sh
     ```
 
-3. Optional. Add the blockchain tools directory to your path.
+3. 可选。 将区块链工具目录添加至您的环境变量中。
 
     ```shell
     echo "export PATH=~/wax-blockchain/bin:$PATH" >> ~/.bashrc && source ~/.bashrc
