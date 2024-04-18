@@ -1,13 +1,13 @@
 ---
-title: Install WAX-CDT
-order: 51
+标题: 安装 WAX-CDT
+顺序: 51
 ---
 
-# Install WAX-CDT
+# 安装 WAX-CDT
 
-The GitHub WAX-CDT Repository downloads to the **wax-cdt** directory. The download and build process can take several minutes to several hours, depending on your Internet connection, operating system, and hardware specifications.
+GitHub上的WAX-CDT存储库会下载到 **wax-cdt** 目录中，下载和构建过程的时间会根据您的网络、操作系统和硬件规格而不同，可能需要几分钟到几个小时。
 
-To download the WAX-CDT Source Code Repository, paste the following into the command line:
+要下载WAX-CDT源代码库，请将以下内容粘贴到命令行中：
 
 ```
 git clone --recursive https://github.com/worldwide-asset-exchange/wax-cdt.git
@@ -15,27 +15,27 @@ git clone --recursive https://github.com/worldwide-asset-exchange/wax-cdt.git
 
 ## Build WAX-CDT
 
-If you're using our Docker images, you do **not** need to complete these steps.
+如果正在使用我们的Docker镜像，您 **不需要** 完成这些步骤。
 
-To build WAX-CDT from source, you can use the following steps. If you have a previous version installed, you'll need to uninstall it first. Refer to [Uninstall WAX-CDT](/build/dapp-development/wax-cdt/cdt_uninstall) for more information.
+从源代码构建WAX-CDT，需要按照以下步骤进行。如果您已安装了旧版本，首先需要卸载旧版本。有关更多信息，请参阅 [Uninstall WAX-CDT](/build/dapp-development/wax-cdt/cdt_uninstall)。
 
-:::warning
-Important: Building from source is not supported. If you encounter an issue with the build, you can use our [Docker Images](/build/dapp-development/docker-setup/) instead (recommended).
+:::警告
+重要: 不支持从源代码构建。如果在开发过程中遇到问题，可以使用我们的 [Docker 镜像](/build/dapp-development/docker-setup/) instead (推荐)。
 :::
 
-1. Change your directory to **wax-cdt**.
+1. 将您的目录更改为 **wax-cdt**。
 
 ```
 cd wax-cdt
 ```
 
-2. Run the build script.
+2. 运行构建脚本。
 
 ```
 ./build.sh
 ```
 
-3. Run the install script.
+3. 运行安装脚本。
 
 ```
 sudo ./install.sh
