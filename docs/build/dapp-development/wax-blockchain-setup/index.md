@@ -5,49 +5,49 @@
 
 # WAX 链设置
 
-To set up and use the WAX Blockchain, it's recommended that you use our <a href="https://hub.docker.com/u/waxteam" target="_blank">waxteam - Docker Images</a>. Our docker images provide a fast, fully supported way to run a node in seconds. Refer to [Docker Quickstart](/build/dapp-development/docker-setup/) for more information.
+当要建设和使用WAX链时， 建议您使用我们的 <a href="https://hub.docker.com/u/waxteam" target="_blank">waxteam - Docker Images</a>。 我们的Docker镜像能起到快速、完全支持的作用，能在几秒钟内运行节点。有关更多信息，请参阅[Docker Quickstart](/build/dapp-development/docker-setup/) 获得更多信息。
 
-Our production and development Docker images include everything that's available from the <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Blockchain Source Code Repository</a>, allowing you to run WAX nodes and build and deploy smart contracts.
+Docker镜像包含了来自 <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX 链源代码库</a>中的所有内容， 这样您就可以运行WAX节点，构建和部署智能合约。
 
-If you'd like to access our sample contracts and scripts from your local drive or have a need to install the WAX Blockchain instead of using Docker, you can use this guide to download and optionally build the WAX Blockchain source code.
+如果您想从本地驱动器访问我们的示例合约和脚本，或者需要安装WAX链而不是使用Docker，您可以使用这个方法下载并选择性的构建WAX链源代码。
 
-:::warning
-Important: At this time, pre-compiled packages are not available. Support is <strong>not</strong> available when you build the WAX blockchain from source.
+:::警告
+重要： 目前没有提供预编译的软件包。 如果您选择从源代码构建WAX区块链，我们将无法提供帮助。
 :::
 
-## What's Included
+## 包含什么
 
-The WAX Blockchain is a fork of <a href="https://docs.eosnetwork.com/" target="_blank">EOS (Antelope)</a>. This <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Blockchain Source Code Repository</a> includes and installs:
+WAX链是基于 <a href="https://docs.eosnetwork.com/" target="_blank">EOS (Antelope)</a>的一个分支。这个 <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX 链源代码库</a> 包含并安装了以下内容：
 
-- WAX Blockchain source code
-- Dependencies
-- [Blockchain Tools](/build/tools/blockchain_tools), including keosd, nodeos, and cleos
-- Sample contracts
+- WAX 链源代码
+- 依赖项
+- [区块链工具](/build/tools/blockchain_tools), 包括, nodeos, 和 cleos
+- 示例合约
 
-You can use these components to manage local wallets, create local accounts, interact with the WAX Blockchain, and more.
+您可以使用这些组件来管理本地钱包、创建账户、与WAX链进行交互等操作。
 
-:::warning
-<strong>EOS Developers:</strong> Building the WAX Source Code Repository will overwrite a previous EOS installation.
+:::警告
+<strong>EOS 开发者:</strong> 构建WAX源代码库将会覆盖之前的EOS的库。
 :::
 
 ### Docker Quick Deploy
 
-The WAX Source Code Repository includes a Hello World sample to quickly build and deploy WAX smart contracts to the WAX Blockchain. Refer to [Docker Quick Deploy](/build/dapp-development/deploy-dapp-on-wax/deploy_docker) for more information.
+WAX 源代码库包含一个Hello World示例，可以快速构建和部署WAX智能合约到WAX链上。更多信息请参考 [Docker 快速部署](/build/dapp-development/deploy-dapp-on-wax/deploy_docker) 。
 
-### Dependencies
+### 依赖项
 
-<p>For a complete list of dependencies, refer to <a href="https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/scripts" target="_blank">wax-blockchain/scripts</a> and locate the `wax_build_` file for your operating system.</p>
+<p>要查看完整的依赖项列表，请参考 <a href="https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/scripts" target="_blank">wax-blockchain/scripts</a> 并找到适用于您操作系统的 `wax_build_` 文件。</p>
 
-## System Requirements
+## 系统要求
 
-If you're not using our Docker images, you'll need to:
+如果没有使用我们的Docker镜像，您需要：
 
-- Refer to [Supported Operating Systems](/build/tools/os) to make sure you meet the operating system requirements.
+- 请查看 [支持的操作系统](/build/tools/os) ，以确保您的操作系统符合要求。
 
-  :::warning
-  <strong>Ubuntu 18.04 Users:</strong> Refer to [Known Issues](/build/troubleshooting/) before you begin the WAX Blockchain Setup.
+  :::警告
+  <strong>Ubuntu 18.04 用户:</strong> 在要开始WAX链设置之前，请参考 [已知问题](/build/troubleshooting/)。
   :::
 
-- Have at least 7 GB of free RAM.
+- 至少需要有 7 GB 的空置内存。
 
-- Have at least 20 GB of free hard drive space.
+- 至少还有20 GB 的硬盘空间。
