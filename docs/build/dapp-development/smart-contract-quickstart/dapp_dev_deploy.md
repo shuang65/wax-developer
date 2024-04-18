@@ -1,20 +1,20 @@
 ---
-title: Deploy to Your Blockchain
-order: 65
+标题: 将智能合约部署到链上
+顺序: 65
 ---
 
-# Deploy to Your Blockchain
+# 将智能合约部署到链上
 
 <!--To deploy your smart contract to your local development blockchain, you'll need to:
 
 - Compile your smart contract
 - Create a blockchain account for your smart contract.-->
 
-In this guide, you'll use **cleos** to deploy and test the wax smart contract you created and compiled in the [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) tutorial. 
+在此指南中， 将使用 **cleos** 来部署和测试您在 [创建智能合约](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) 教程中创建和编译的 WAX 智能合约。 
 
-## Before You Begin
+## 开始之前
 
-- **nodeos** must be running 
+- **节点** 必须正在运行 
     ```shell
     nodeos -e -p eosio \
         --plugin eosio::producer_plugin \
@@ -25,7 +25,7 @@ In this guide, you'll use **cleos** to deploy and test the wax smart contract yo
         --http-validate-host=false \
         --verbose-http-errors >> nodeos.log 2>&1 &
     ```
-- Your wallet must be Opened and Unlocked
+- 您的钱包必须打开并处于解锁状态
     ```shell
     cleos wallet open
     ```
@@ -33,23 +33,23 @@ In this guide, you'll use **cleos** to deploy and test the wax smart contract yo
     ```shell
     cleos wallet unlock --password PW5KRXKVx25yjL3FvxxY9YxYxxYY9Yxx99yyXTRH8DjppKpD9tKtVz
     ```
-- You must create a WAX Account for your smart contract. Refer to [Create Accounts](/build/dapp-development/smart-contract-quickstart/dapp_account) if you haven't completed this step.
+- 如果您还没有为智能合约创建一个WAX账户，则必须先完成账户创建， 请参阅 [创建账户](/build/dapp-development/smart-contract-quickstart/dapp_account) 进行操作。
 
-## Deploy Your Smart Contract
+## 部署您的智能合约
 
-To deploy your smart contract's WASM file to your local blockchain, use `cleos set contract` from the command line:
+要把您的智能合约的 WASM 文件部署到本地区块链，可以用命令行里的 `cleos set contract`：
 
-| Parameter | Example | Description
+| 参数 | 示例 | 描述
 | --- | ----------- | -------------------------- |
-| account | waxsc1 | Your smart contract's account. |
-| path | /users/wax-blockchain/wax-cdt/mycontracts/wax | Full path to your WASM file. |
-| permission | -p waxsc1@active | Active or Owner permission for your smart contract's account. |
+| account | waxsc1 | 您的智能合约账户 |
+| path | /users/wax-blockchain/wax-cdt/mycontracts/wax | 您的 WASM 文件的完整路径。 |
+| permission | -p waxsc1@active | 您的智能合约账户的active权限或owner权限。 |
 
 ```shell
 cleos set contract waxsc1 /users/wax-blockchain/wax-cdt/mycontracts/wax -p waxsc1@active
 ```
 
-The console prints the following confirmation:
+控制台将输出以下信息:
 
 ```shell
 Reading WASM from /users/wax-blockchain/wax-cdt/mycontracts/wax/wax.wasm...
@@ -60,24 +60,22 @@ executed transaction: 8a79664a3f0457513fabaa5753c41b18588cb2994cd5e3164328eafc96
 warning: transaction executed locally, but may not be confirmed by the network yet         ]
 ```
 
-Your smart contract should now be live on your local blockchain.
+您的智能合约现在已经部署在本地区块链上。
 
-## Test Your Smart Contract
-
-To test your smart contract, use `cleos push action` from the command line:
-
-| Parameter | Example | Description
+## 测试您的智能合约
+要测试您的智能合约， 请在命令行使用`cleos push action` ：
+| 参数 | 示例 | 描述
 | --- | ----------- | -------------------------- |
-| account | waxsc1 | Your smart contract's account. |
-| action | hi | Name of action. |
-| datastream | '["YourName"]' | Enter your name or any other string. |
-| permission | -p waxsc1@active | Active or Owner permission for your smart contract's account. |
+| account | waxsc1 | 您的智能合约账户 |
+| action | hi | action名称 |
+| datastream | '["YourName"]' | 输入您的名字或其他字符串 |
+| permission | -p waxsc1@active | 智能合约账户的active权限或owner权限。 |
 
 ```shell
 cleos push action waxsc1 hi '["YourName"]' -p waxsc1@active
 ```
 
-The console prints the following:
+控制台将输出以下信息:
 
 ```shell
 executed transaction: 6a0b1489d903f2cacc6480830358f07aaf65b20bf1d7e855dc20097f4d64dc52  104 bytes  1727 us
@@ -86,7 +84,7 @@ executed transaction: 6a0b1489d903f2cacc6480830358f07aaf65b20bf1d7e855dc20097f4d
 warning: transaction executed locally, but may not be confirmed by the network yet         ]
 ```
 
-If you receive an error that the transaction took too long, run `cleos push action` again. If you still receive an error, try restarting **nodeos**.
+如果收到交易超时的错误，请再次运行  `cleos push action` 。 如果还是有错误，请尝试重新启动  **nodeos**。
 
 ```shell
 Error 3080006: Transaction took too long
