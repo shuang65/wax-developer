@@ -5,7 +5,7 @@
 
 # WAX-CDT API
 
-你所有的智能合约都来自 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/)库中的 C++ API 文件。 这些文件用于定义你的智能合约的操作、结构和数据类型。  
+所有的智能合约都来自 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/)库中的 C++ API 文件。 这些文件用于定义你的智能合约的操作、结构和数据类型。  
 
 这个智能合约的 API 可以分为三个关键模块：
 
