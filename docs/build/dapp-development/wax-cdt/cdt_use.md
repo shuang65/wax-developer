@@ -1,57 +1,57 @@
 ---
-title: WAX-CDT Sample Contracts
-order: 52
+标题: WAX-CDT 合约示例
+顺序: 52
 ---
 
-# WAX-CDT Sample Contracts
+# WAX-CDT 合约示例
 
-WAX-CDT provides a **wax-cdt/examples** directory that includes the following sample smart contracts:
+WAX-CDT 会有一个 **wax-cdt/examples** 目录， 其中包含以下智能合约示例：
 
 - Hello World
-- multi_index Example
-- Inline Transaction Example
+- multi_index 示例
+- Inline Transaction 示例
 
-Each project includes two **CMakeLists.txt** files: one in the project's root directory, and the other in the projects **src** directory. You can use these files to automatically generate WASM and ABI files for the sample projects.
+每个项目都包含两个 **CMakeLists.txt** 文件： 一个在根目录中，另一个在**src** 目录中。 您可以使用这些文件自动生成示例项目的WASM和ABI文件。
 
-In this tutorial, you'll learn how to use the **make** scripts to build the Hello World example.
+在本教程中，您将学习如何使用 **make** 脚本构建 Hello World 示例。
 
-:::warning
-<strong>Note:</strong> These samples were created with **eosio-init** (part of the [WAX-CDT Options](/build/tools/cdt_options) suite of tools). Refer to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) to customize these scripts for your smart contracts.
+:::警告
+<strong>注意：</strong> 这些示例是使用 **eosio-init** ( [WAX-CDT 选项](/build/tools/cdt_options) 工具套件的一部分)创建的。 请参阅 [创建智能合约](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) 来为您的智能合约选择脚本。
 :::
 
-## Compile Hello World
+## 编译 Hello World
 
-To compile the Hello World example:
+要编译 Hello World 示例：
 
-1. From the command line, navigate to **wax-cdt/examples/hello**.
+1. 从命令行导航至 **wax-cdt/examples/hello**。
 
     ```shell
     cd wax-cdt/examples/hello
     ```
 
-2. Create a **build** directory.
+2. 创建一个 **build** 目录。
 
     ```shell
     mkdir build
     ```
 
-:::warning
-    <strong>Note:</strong> By default, <strong>eosio-init</strong> creates a build directory. Because this directory is empty, it's not uploaded to Git. If you use <strong>eosio-init</strong> to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world), you'll be able to skip this step. 
+:::警告
+    <strong>注意：</strong> 默认情况下， <strong>eosio-init</strong> 会创建一个 build 目录。 该目录是空的，所以不会上传至Git。 如果使用 <strong>eosio-init</strong> [创建智能合约](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world)，您可以跳过这一步。 
 :::
 
-3. Navigate to the **build** directory.
+3. 导航至 **build** 目录。
 
     ```shell
     cd build
     ```
 
-4. Initialize cmake from the **wax-cdt/examples/hello** directory to write the necessary build files to the **build** directory.
+4. 在 **wax-cdt/examples/hello** 目录初始化cmake，将必要的开发文件写入 **build** 目录。.
 
     ```shell
     cmake ..
     ```
 
-    The console prints the following build tasks:
+    控制台会输出以下开发任务：
 
     ```shell
     -- The C compiler identification is GNU 7.4.0
@@ -84,13 +84,13 @@ To compile the Hello World example:
     -- Build files have been written to: waxblockchain/wax-blockchain/wax-cdt/examples/hello/build
     ```
 
-4. Build the scripts.
+4. 构建脚本
 
     ```shell
     make
     ```
 
-    The console prints the following confirmation:
+    控制台会输出以下信息：
 
     ```shell
     [  5%] Performing build step for 'hello_project'
@@ -102,7 +102,7 @@ To compile the Hello World example:
     [ 55%] Performing configure step for 'hello_tests_project'
     ```
 
-You should now be able to locate the **hello.wasm** and **hello.abi** files in the **build/hello** directory. 
+现在应该能在**build/hello**目录中找到 **hello.wasm** 和 **hello.abi** 文件了。 
 
 <!--## Modify the Scripts and Build Your Project
 
