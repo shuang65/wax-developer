@@ -1,27 +1,27 @@
 ---
-title: Create a Smart Contract
-order: 62
+标题: 创建一个智能合约
+顺序: 62
 ---
 
-# Create a Smart Contract
+# 创建一个智能合约
 
-In this section, you'll learn how to write and compile a WAX smart contract using **eosio-init**.
+在这节中， 您会学到如何用 **eosio-init**写并编译一个 WAX 的智能合约。
 
-## How it Works
+## 如何工作的
 
-**eosio-init** is a WAX-CDT tool that creates the following smart contract template/directory structure:
+**eosio-init** 是一个WAX-CDT 工具， 它会创建以下智能合约模板/目录结构：
 
-- **include** folder: This includes a sample **.hpp** file.
-- **ricardian** folder: This includes a sample Ricardian contract markdown file.
-- **src** folder: This includes a sample **.cpp** smart contract file.
+- **include** 文件夹： 这里包含一个 **.hpp** 文件样例。
+- **ricardian** 文件夹： 这里有一个Ricardian智能合约中markdown文件的示例。
+- **src**文件夹： 这里有一个 **.cpp** 智能合约文件样例。
 
-The template files are named after the project name you specify when you use **eosio-init** from the command line. 
+模板文件的名字会根据您在命令行中使用 **eosio-init** 时指定的项目名称来命名。 
 
-## Use eosio-init
+## 使用 eosio-init
 
-To create your first WAX smart contract using **eosio-init**:
+使用 **eosio-init**来创建您的第一个WAX智能合约：
 
-1. Create a smart contracts directory. For this tutorial, we'll use a folder named **mycontracts**.
+1. 新建一个智能合约文件夹。在这个教程中，我们将使用一个名为 **mycontracts**的文件夹。
 
     ```shell
     mkdir mycontracts
@@ -31,21 +31,21 @@ To create your first WAX smart contract using **eosio-init**:
     cd mycontracts
     ```
 
-2. From the command line, use **eosio-init** with the `-project` parameter.
+2. 命令中，使用 **eosio-init** 并带上 `-project` 参数。
 
     ```
     eosio-init -project wax
     ```
 
-    **eosio-init** uses the `-project` name to create the following directory structure:
-
+    **eosio-init** 使用 `-project` 参数来创建以下目录结构：
+   
     - mycontracts/wax/include 
     - mycontracts/wax/ricardian 
     - mycontracts/wax/src 
 
-3. Optional. Add a [Ricardian Clause](/build/tools/ricardian_clause). A  [Ricardian Contract](/build/tools/ricardian_contract) is already included by default.
+4. 可选的。 添加 [Ricardian Clause](/build/tools/ricardian_clause)。 默认情况下已经有 [Ricardian Contract](/build/tools/ricardian_contract) 了。
 
-You should now have a smart contract template, including a sample smart contract (mycontracts/wax/src/wax.cpp). This contract includes the following action:
+您现在已经有一个智能合约模板了，其中包含一个样例智能合约文件 (mycontracts/wax/src/wax.cpp)。 该合约包含以下操作：
 
 ```
 #include <wax.hpp>
@@ -55,7 +55,7 @@ ACTION wax::hi( name nm ) {
 }
 ```
 
-The header file (mycontracts/wax/include/wax.hpp) inherits from **<eosio/eosio.hpp>**.
+头文件 (mycontracts/wax/include/wax.hpp) 来自 **<eosio/eosio.hpp>**.
 
 ```
 // Inherit your contract from eosio::contract. 
@@ -79,30 +79,29 @@ CONTRACT wax : public contract {
       using hi_action = action_wrapper<"hi"_n, &wax::hi>;
 };
 ```
-:::tip
-The action_wrapper struct creates a template/pointer based off of a specific action. You can use action_wrappers to make action calls from one contract to another. 
+:::提示
+action_wrapper结构创建了一个基于特定操作的模板/指针。您可以使用 action_wrapper 来从一个合约调用另一个合约的操作。
 :::
 
 
-## Compile Your Contract
+## 编译智能合约
+要部署智能合约，您需要创建一个 `.wasm` 文件和 `.abi` 文件，您可以使用 WAX 合约开发工具包 (WAX-CDT)来完成。
 
-To deploy your smart contract, you'll need to create a `.wasm` and `.abi` file. You can do this using the WAX Contract Development Toolkit (WAX-CDT).
+1. 安装 [WAX-CDT](/build/dapp-development/wax-cdt/) (如果你还没有安装)。
 
-1. Install [WAX-CDT](/build/dapp-development/wax-cdt/) (if you haven't done so already).
-
-2. From the command line, navigate to the **mycontracts/wax** build folder.
+2. 命令行中， 切换到 **mycontracts/wax** 的构建文件夹。
 
     ```shell
     cd wax/build
     ```
 
-3. Initialize cmake to write the necessary build files to the **build** directory.
+3. 使用 cmake 初始化，将重要的构建文件写入 **build** 目录。
 
     ```shell
     cmake ..
     ```
 
-    The console prints the following build tasks:
+    控制台会输出以下构建任务：
 
     ```shell
     -- The C compiler identification is GNU 7.4.0
@@ -115,14 +114,13 @@ To deploy your smart contract, you'll need to create a `.wasm` and `.abi` file. 
     -- Build files have been written to: waxblockchain/wax-blockchain/wax-cdt/examples/hello/build
     ```
 
-4. Build the scripts.
+4. 构建脚本。
 
     ```shell
     make
     ```
 
-    The console prints the following confirmation:
-
+    控制台将会输出以下信息：
     ```shell
     Scanning dependencies of target wax
     [ 50%] Building CXX object CMakeFiles/wax.dir/wax.obj
@@ -135,5 +133,5 @@ To deploy your smart contract, you'll need to create a `.wasm` and `.abi` file. 
     [100%] Built target wax_project
     ```
 
-You can locate the **wax.wasm** and **wax.abi** files in the **build/wax** directory. 
+您可以在**build/wax**目录中找到 **wax.wasm** 文件和 **wax.abi** 文件。 
 
