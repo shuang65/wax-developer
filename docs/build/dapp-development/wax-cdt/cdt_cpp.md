@@ -1,48 +1,48 @@
 ---
-title: WAX-CDT Build Tools
-order: 53
+标题: WAX-CDT 开发工具
+顺序: 53
 ---
 
-# WAX-CDT Build Tools
+# WAX-CDT 开发工具
 
-WAX-CDT includes various **eosio** commands, built around the <a href="https://clang.llvm.org/" target="_blank">Clang</a> front-end and tooling infrastructure. This collection includes various tools to build optimized, high-performance WASM files. Refer to [WAX-CDT Options](/build/tools/cdt_options) for more information.
+WAX-CDT 包含了各种<a href="https://clang.llvm.org/" target="_blank">Clang</a>前端和工具基础架构构建的 **eosio**命令。这个集合包括了多种工具，用于构建优化、高性能的WASM文件。有关更多信息，请参阅 [WAX-CDT Options](/build/tools/cdt_选项) 。
 
-It's recommended that you use **eosio-init** to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world). This tool provides scripts to easily organize and build your project. 
+建议您使用 **eosio-init** 去 [创建智能合约](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world)。这个工具提供了脚本，可以轻松组织和开发您的项目。 
 
-If these scripts do not meet your needs, you can also use the **eosi-cpp** command to compile your smart contracts.
+如果这些脚本不符合您的需求，还可以使用 **eosi-cpp** 来编译智能合约。
 
-## Use eosio-cpp
+## 使用 eosio-cpp
 
-To generate a WASM and ABI file for your smart contract:
+要为您的智能合约生成WASM和ABI文件：
 
-1. From the command line, navigate to your smart contracts folder.
+1. 命令行中导航至智能合约文件夹
 
-2. Run the **eosio-cpp** build command with the **-abigen** parameter.
+2. 运行 **eosio-cpp** 构建命令， 并使用 **-abigen** 参数。
 
-:::tip
-<strong>eosio-cpp</strong> also includes Ricardian terms in your ABI file. Refer to [Ricardian Contracts](/build/tools/ricardian_contract) and [Ricardian Clauses](/build/tools/ricardian_clause) for more information.
+:::提示
+<strong>eosio-cpp</strong> 还会在 ABI 文件中包含Ricardian条款。可以查看 [Ricardian Contracts](/build/tools/ricardian_contract) 和 [Ricardian Clauses](/build/tools/ricardian_clause) 获取更多信息。
 :::
 
 ```
 eosio-cpp -abigen wax.cpp -o wax.wasm
 ```
 
-This will generate two files in your contract's directory:
+将在合约目录中生成两个文件
 
-* The compiled binary WASM (wax.wasm)
-* The generated ABI file (wax.abi)
+* 编译后的二进制WASM文件 (wax.wasm)
+* 生成的 ABI 文件 (wax.abi)
 
 <!--## Use eosio-abigen to Generate an ABI
 
-If you only want to generate an ABI file, you can easily do so with the **eosio-abigen** command. 
+如果您只想生成一个ABI文件，可以使用 **eosio-abigen** 命令完成。 
 
-To use **eosio-abigen**, include the following parameters:
+要使用**eosio-abigen**， 请包含以下参数：
 
-- Your contract's C++ file name
-- --contract (Your contract's name)
-- --output (Desired ABI file name)
+- 您合约的 C++ 文件名
+- --contract (合约名称)
+- --output (ABI文件名)
 
-### Example
+### 示例
 
 ```
 eosio-abigen hello.cpp --contract=hello --output=hello.abi
