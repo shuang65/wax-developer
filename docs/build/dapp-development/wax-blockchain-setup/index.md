@@ -1,9 +1,9 @@
 ---
-title: WAX Blockchain Setup
-order: 30
+标题: WAX 链设置
+顺序: 30
 ---
 
-# WAX Blockchain Setup
+# WAX 链设置
 
 To set up and use the WAX Blockchain, it's recommended that you use our <a href="https://hub.docker.com/u/waxteam" target="_blank">waxteam - Docker Images</a>. Our docker images provide a fast, fully supported way to run a node in seconds. Refer to [Docker Quickstart](/build/dapp-development/docker-setup/) for more information.
 
