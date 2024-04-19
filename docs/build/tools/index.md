@@ -3,4 +3,4 @@
 顺序: 50
 ---
 
-<ChildTableOfContents :max="2" title="Tools & Topics" />
+<ChildTableOfContents :max="2" title="工具 & 主题" />
