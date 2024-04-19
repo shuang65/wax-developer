@@ -16,7 +16,7 @@ The Worldwide Asset eXchange™ (WAX) 是一个专为电子商务交易设计的
   * 了解[WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/)
   * [搭建本地 dApp 环境](/build/dapp-development/setup-local-dapp-environment/)
 
-<span class="anchor" id="buildDapp"></span>
+<span class="anchor" id="搭建Dapp"></span>
 <h2>Build a dApp</h2>
 
 当您设置好开发环境后，这些教程将帮助您在WAX上推出下一个优秀的dApp。
