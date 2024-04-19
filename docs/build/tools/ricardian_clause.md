@@ -1,42 +1,42 @@
 ---
-title: Ricardian Clauses
-order: 112
+标题: Ricardian 条款
+顺序: 112
 ---
 
 # Ricardian Clauses
 
-Similar to a [Ricardian Contract](/build/tools/ricardian_contract), a Ricardian clause is a digital document that specifies the terms of your entire smart contract - not just per action. 
+与 [Ricardian合约](/build/tools/ricardian_contract)类似，Ricardian条款是一份数字文档，用于规定整个智能合约的条款，而不仅仅是每个操作的条款。 
 
-To associate a Ricardian clause with your smart contract, you'll need to create a markdown file. 
+要将Ricardian条款与您的智能合约关联，需要编写一个Markdown文件。 
 
-* This file must have the same name as your smart contract. For example, if your smart contract is named **wax.cpp**, your Ricardian markdown file must be named: wax.clauses.md.
-* Each **```<h1>```** tag must have the "clause" class: ```<h1 class="clause">```.
+* 该文件的命名必须与您的智能合约相同。例如，如果您的智能合约名称为 **wax.cpp**， 则您的 Ricardian markdown 文件必须命名为： wax.clauses.md.
+* 每个 **```<h1>```** 标签必须有 "clause" 类: ```<h1 class="clause">```。
 
-It's also important where you store your Ricardian markdown file (in relation to your smart contract C++ file). This depends on how you're compiling your contract.
+您存储Ricardian Markdown文件的位置也很重要（与您的智能合约C++文件相关）。这取决于您如何编译您的合约。
 
-## Use WAX-CDT
+## 使用 WAX-CDT
 
-If you use **eosio-init** to create a smart contract template, a folder is automatically created for you under your project directory (e.g., wax/ricardian). By default, this folder does not contain a Ricardian clause. You'll need to create one, such as wax.clauses.md.
+如果您使用 **eosio-init** 来创建智能合约模板，一个文件夹会自动在您的项目目录下创建（例如，wax/ricardian）。默认情况下，此文件夹不包含Ricardian条款。需要创建一个，例如wax.clauses.md。
 
-The CMake scripts will automatically include the files listed in the **ricardian** directory.
+CMake脚本会自动包含 **ricardian** 目录中列出的文件。
 
-Refer to [Create a Smart Contract](/build/dapp-development/smart-contract-quickstart/) for more information.
+请参阅 [创建智能合约](/build/dapp-development/smart-contract-quickstart/) 以获取更多信息。
 
-## Use eosio-cpp
+## 使用 eosio-cpp
 
-If you use eosio-cpp, your Ricardian clause must be in the same directory as wax.cpp and must be the same name: wax.clauses.md.
+如果您使用eosio-cpp，Ricardian条款必须与wax.cpp文件在同一个目录中，并且文件名必须相同：wax.clauses.md。
 
 ```shell
 eosio-cpp -abigen wax.cpp -o wax.wasm
 ```
 
-## Example Ricardian Clause
+## Ricardian 条款示例
 
-To include a Ricardian clause:
+要包含 Ricardian 条款：
 
-1. Create a file named **your-contract.clauses.md** (e.g., wax.clauses.md).
-2. Include the "clause" class in the ```<h1>``` tag.
-3. Paste the markdown below into your clauses file.
+1. 创建一个名为 **your-contract.clauses.md**的文件 (例如， wax.clauses.md)。
+2. 在 ```<h1>``` 标签中包含"clause"类。
+3. 请将以下Markdown内容复制粘贴到您的条款文件中。
 
 ```html
 <hr style="height:1px; border:none; color:#000; background-color:#000; width:100%; text-align:left; margin: 0 auto 0 0;">
