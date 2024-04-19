@@ -1,34 +1,34 @@
 ---
-title: WAX-CDT Options
-order: 110
+标题: WAX-CDT 选项
+顺序: 110
 ---
 
-# WAX-CDT Options
+# WAX-CDT 选项
 
-Below is a list of common WAX-CDT tools and parameters. You can use these tools to generate WASM and ABI files for your smart contracts.
+以下是常见的WAX-CDT工具和参数列表。您可以使用这些工具给智能合约生成WASM和ABI文件。
 
 ## eosio-abidiff
-Compares the differences between two ABI files. A report prints out to the console.
+eosio-abidiff是一个用于比较两个ABI文件之间差异的命令行工具，它会生成一份报告并将差异内容输出到控制台上。
 
 ```shell
 USAGE: eosio-abidiff [options] [input file1] ... [input file2] ...
 EXAMPLE: eosio-abidiff hello.abi old_hello.abi   
 
-OPTIONS:
+选项:
 
-Generic Options:
+通用选项：
 
-  -help      - Display available options (-help-hidden for more)
-  -help-list - Display list of available options (-help-list-hidden for more)
-  -version   - Display the version of this program
+  -help      - 显示可使用选项 (-help-hidden 更多)
+  -help-list - 显示可使用选项列表 (-help-list-hidden 更多)
+  -version   - 显示该程序版本
 ```
 
 ## eosio-cpp
-Generates WASM and ABI files for your smart contracts.
+为您的智能合约生成WASM和ABI文件。
 
 ```shell
-USAGE: eosio-cpp [options] [input file] ...
-EXAMPLE: eosio-cpp -abigen wax.cpp -o wax.wasm
+用法: eosio-cpp [选项] [输入文件] ...
+示例: eosio-cpp -abigen wax.cpp -o wax.wasm
 
 OPTIONS:
   -C                       - Include comments in preprocessed output
@@ -78,7 +78,7 @@ Generic Options:
 ```
 
 ## eosio-init
-Creates a smart contract template and directory structure. Includes CMake build scripts by default.
+创建一个智能合约模板和目录结构。默认包含CMake构建脚本。
 
 ```shell
 USAGE: eosio-init [options]
@@ -101,7 +101,7 @@ generates an eosio smart contract project
 ```
 
 ## eosio-ld
-WebAssembly linker.
+WebAssembly 链接器
 
 ```shell
 USAGE: eosio-ld [options] [input file] ...
