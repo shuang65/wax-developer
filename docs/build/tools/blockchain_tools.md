@@ -13,7 +13,7 @@
 
 更多信息请参考EOS的<a href="https://docs.eosnetwork.com/leap/latest/keosd/" target="_blank">介绍 - keosd</a> 。
 
-## 节点 
+## nodeos 
 
 这是WAX的主要的节点守护程序，用于在您的服务器上运行本地节点。可以使用各种插件和选项初始化 **nodeos** 。
 
