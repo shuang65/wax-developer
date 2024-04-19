@@ -21,31 +21,31 @@ WAX-CDT 工具包包含在 **waxteam/dev** Docker 镜像中， 我们还提供�
 
 ## 包括什么
 
-- A [C/C++ API library](/build/api-reference/cdt_api) to communicate with the WAX Blockchain
-- Sample smart contracts to jumpstart your dApp development
-- Tools to create new smart contract templates 
-- CMake scripts and tools to build optimized, high-performance WASM files
-- Support for Ricardian files
+- 用于与WAX链通信的 [C/C++ API 库](/build/api-reference/cdt_api) 
+- 只能合约示例，可以帮助您d开发App
+- 用于创建新智能合约模版的工具 
+- 使用CMake脚本构建优化，高性能的WASM文件
+- 支持Ricardian文件格式
 
-WAX-CDT includes various **eosio** commands, built around the <a href="https://clang.llvm.org/" target="_blank">Clang</a> front-end and tooling infrastructure. This collection includes various tools to compile your smart contracts and create smart contract templates. Refer to [WAX-CDT Options](/build/tools/cdt_options) for a list of tools and parameters:
+WAX-CDT 包括多种 **eosio** 命令， 基于<a href="https://clang.llvm.org/" target="_blank">Clang</a> 的前端和工具基础设施。该集合包括了多种工具，用于编译智能合约并创建智能合约模板。可以参考 [WAX-CDT Options](/build/tools/cdt_选项) 查看工具和参数列表：
 
-- Sample contracts and customizable **make** scripts to automatically generate WASM and ABI files.
-- <a href="https://clang.llvm.org/" target="_blank">Clang</a> based tools , including
-  - **eosio-cpp:** C++ WebAssembly Compiler
-  - **eosio-ld:** WebAssembly Linker
-  - **eosio-abigen:** C++ ABI Generator
+-  示例合约和可自定义的**make**脚本，用于自动生成 WASM 和 ABI 文件。 
+- 基于<a href="https://clang.llvm.org/" target="_blank">Clang</a> 的工具， 其中包括
+  - **eosio-cpp:** C++ 编译器
+  - **eosio-ld:** WebAssembly 链接器
+  - **eosio-abigen:** C++ ABI 生成器
 
-## How it Works
+## 如何工作的
 
-When you're ready to deploy your smart contract to your local development environment or the WAX mainnet, you can use the <a href="https://github.com/worldwide-asset-exchange/wax-cdt" target="_blank">WAX Contract Development Toolkit (WAX-CDT)</a> to convert your contract to a WebAssembly (WASM) file. You can also use WAX-CDT to create an Application Binary Interface (ABI) file that includes [Ricardian Contracts](/build/tools/ricardian_contract) and [Ricardian Clauses](/build/tools/ricardian_clause).
+当您准备在本地开发环境或 WAX 主网上部署智能合约时，可以使用 <a href="https://github.com/worldwide-asset-exchange/wax-cdt" target="_blank">WAX 合约开发工具包 (WAX-CDT)</a> 将合约转化为 WebAssembly (WASM) 文件。同时， 也可以使用 WAX-CDT创建包含 [Ricardian Contracts](/build/tools/ricardian_contract) 和 [Ricardian Clauses](/build/tools/ricardian_clause)的应用程序二进制接口（ABI）文件。
 
-- **WebAssembly (WASM) Files:** A WASM file is a compact, binary format of your C++ smart contract, optimized for speed and web performance. The WAX Blockchain uses this file to execute the actions defined in your smart contract. 
+- **WebAssembly (WASM) 文件:**WASM 文件是经过优化的二进制格式，存储着您的 C++ 智能合约，旨在提升执行速度和网络性能。WAX 链会使用这些文件来执行智能合约中定义的操作。 
 
-- **Application Binary Interface (ABI) Files:** An ABI file is a JSON description of your smart contract's structures, types, actions, tables, and other contract definitions. This allows developers and client interfaces to easily interpret your contract's functionality. 
+- **应用程序二进制接口 (ABI) 文件:** ABI 文件是智能合约结构、类型、操作、表格以及其他定义的 JSON 描述，使得开发者和客户端接口能够轻易理解和解释合约功能。
 
 
-    ### Example ABI
-    This example includes a Ricardian contract for the "hi" action and a Ricardian clause for the contract.
+    ### ABI示例
+    该例包含了一个"hi"操作的 Ricardian合约以及一个针对合约的 Ricardian 条款。
 
     ```json
     {
