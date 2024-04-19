@@ -1,28 +1,28 @@
 ---
 标题: Blockchain Tools
-order: 99
+顺序: 99
 ---
 
-# Blockchain Tools
+# 区块链工具
 
-To communicate with the WAX Blockchain, create a local development environment, and locally deploy your smart contracts, you'll need to use three key tools included in the [WAX Blockchain Setup](//build/dapp-development/wax-blockchain-setup/):
+要与WAX链进行通信、创建本地开发环境并在本地部署您的智能合约，您需要使用[WAX 链设置](//build/dapp-development/wax-blockchain-setup/)：
 
 ## keosd
 
-Used to store private keys. This program automatically starts when you initiate **cleos** commands and can start several instances on your local server.
+用于存储私钥。当您使用 **cleos** 命令时，该程序会自动启动，并可以在您的本地服务器上启动多个实例。
 
-Refer to EOS's <a href="https://docs.eosnetwork.com/leap/latest/keosd/" target="_blank">Introduction - keosd</a> for more information.
+更多信息请参考EOS的<a href="https://docs.eosnetwork.com/leap/latest/keosd/" target="_blank">介绍 - keosd</a> 。
 
-## nodeos 
+## 节点 
 
-This is the core WAX node daemon, used to run a local node on your server. You can initialize **nodeos** with various plug-ins and options.
+这是WAX的主要的节点守护程序，用于在您的服务器上运行本地节点。可以使用各种插件和选项初始化 **nodeos** 。
 
-Nodeos also allows you to communicate with the [WAX RPC API](/build/api-reference/rpc_api).
+Nodeos 还支持与 [WAX RPC API](/build/api-reference/rpc_api)进行通信。
 
-Refer to EOS's <a href="https://docs.eosnetwork.com/leap/latest/nodeos/" target="_blank">Overview - nodeos</a> for more information.
+更多信息请参考EOS的 <a href="https://docs.eosnetwork.com/leap/latest/nodeos/" target="_blank">概述 - nodeos</a>。
 
 ## cleos
 
-Used to interact with your local blockchain and manage local wallets and accounts.
+用于与本地区块链互动和管理本地钱包和账户。
 
-Refer to EOS's <a href="https://docs.eosnetwork.com/leap/latest/cleos/" target="_blank">Overview - cleos</a> for more information.
+有关更多信息，请参阅EOS的 <a href="https://docs.eosnetwork.com/leap/latest/cleos/" target="_blank">概述 - cleos</a> 。
