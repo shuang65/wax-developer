@@ -1,43 +1,43 @@
 ---
-标题: Create and Mint a Fungible Token
-order: 10
+标题: 创建并铸造一个同质化代币
+顺序: 10
 ---
 
-# Create and Mint a Fungible Token Asset
+# 创建并铸造一个同质化代币
 
-In this tutorial, you will learn how to create and mint a fungible token asset on the WAX mainnet.
+在这篇教程中，您将学习如何在WAX主网上创建并铸造一个同质化代币。
 
-## Before You Start
+## 开始之前
 
-* You will need to complete our [Quick Start with Docker](/build/dapp-development/docker-setup/) (recommended) and use the [WAX Blockchain Development Guide](/build/dapp-development/) to build from source.
+* 您需要完成我们的 [Docker快速入门](/build/dapp-development/docker-setup/) (推荐) ，并使用 [WAX 链开发指南](/build/dapp-development/) 从源代码构建。
 
-* To compile and deploy your smart contract, you will need to use the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/).
+* 要编译和部署您的智能合约，需要使用 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/)。
 
-* To deploy your smart contract on the WAX mainnet or the WAX testnet, you will need to create a self-managed WAX Blockchain Account.
+* 要在WAX主网或WAX测试网上部署您的智能合约，需要创建一个自主管理的WAX链账户。
 
-## Clone the Smart Contract from GitHub
+## 从GitHub克隆智能合约
 
-1. Clone the fungible asset smart contract from the WAX GitHub repository:
+1. 从WAX的GitHub存储库中克隆fungible asset（可替换资产）智能合约：
 
     ```shell
     git clone https://github.com/worldwide-asset-exchange/wax-system-contracts.git
     ```
 
-2. Navigate to the smart contract directory:
+2.进入智能合约目录：
 
     ```shell
     cd wax-system-contracts/contracts/eosio.token
     ```
 
-:::warning IMPORTANT
-For the actions that we will perform below, it is necessary to unlock the wallet
+:::重要提醒
+接下来的操作中，需要解锁钱包
 ```shell
 cleos wallet unlock
 ```
 :::
 
-:::tip NOTE
-Replace these variables with your own values:
+:::提示 注意
+将这些变量替换为您想输入的值。
 - `<TOKEN_ACCOUNT_NAME>`: Name of the fungible asset token account (Will be the owner of the fungible asset token).
 - `<OWNER_PUBLIC_KEY>`: Public key of the fungible asset token account.
 - `<ACTIVE_PUBLIC_KEY>`: Active public key of the fungible asset token account.
@@ -48,19 +48,19 @@ Replace these variables with your own values:
 :::
 
 
-3. Create an account for the fungible asset token:
+3. 为同质化代币创建一个账户。
 
-    ```shell
+     ```shell
     cleos create account eosio <TOKEN_ACCOUNT_NAME> <OWNER_PUBLIC_KEY> <ACTIVE_PUBLIC_KEY>
     ```
 
-4. Add the fungible asset token account to the wallet:
+5. 将同质化代币账户添加至钱包。
 
     ```shell
     cleos wallet import --private-key <ACTIVE_PRIVATE_KEY>
     ```
 
-5. Compile the smart contract:
+6. 编译智能合约：
 
     ```shell
     mkdir build
@@ -68,43 +68,41 @@ Replace these variables with your own values:
     cmake ..
     make
     ```
-6. Deploy the smart contract on the WAX mainnet:
+7. 在WAX主网部署智能合约：
 
     ```shell
     cleos set contract eosio.token ../ --abi eosio.token.abi -p <TOKEN_ACCOUNT_NAME>@active
     ```
-7. Mint the fungible asset token:
+8. 铸造同质化代币：
 
     ```shell
     cleos push action <TOKEN_ACCOUNT_NAME> create '["<TOKEN_ACCOUNT_NAME>", "<MAX_ISSUE> <SYMBOL>"]' -p <TOKEN_ACCOUNT_NAME>@active
     ```
 
-8. Verify that the fungible asset token has been minted correctly:
-
+9. 验证同质化代币是否已正确铸造：
     ```shell
     cleos get currency stats <TOKEN_ACCOUNT_NAME> <SYMBOL>
     ```
-9. Mint additional fungible asset tokens:
+10. 铸造更多的同质化代币：
 
     ```shell
     cleos push action <TOKEN_ACCOUNT_NAME> issue '["<TOKEN_ACCOUNT_NAME>", "<AMOUNT> <SYMBOL>", "memo"]' -p <TOKEN_ACCOUNT_NAME>@active
     ```
-10. Verify that the additional fungible asset tokens have been minted correctly:
-
+11.验证其他的同质化代币是否已正确铸造：
     ```shell
     cleos get currency stats <TOKEN_ACCOUNT_NAME> <SYMBOL>
     ```
 
-11. Transfer fungible asset tokens to another account:
+12. 将同质化代币转移至另一个账户：
 
-    ```shell
+     ```shell
     cleos push action <TOKEN_ACCOUNT_NAME> transfer '["<TOKEN_ACCOUNT_NAME>", "<RECIPIENT_ACCOUNT_NAME>", "<AMOUNT> <SYMBOL>", "memo"]' -p <TOKEN_ACCOUNT_NAME>@active
     ```
   
-12. Verify that the fungible asset tokens have been transferred correctly:
+14. 验证同质化代币是否已正确转移：
 
-    ```shell  
+     ```shell  
     cleos get currency balance <TOKEN_ACCOUNT_NAME> <RECIPIENT_ACCOUNT_NAME> <SYMBOL>
     ```
 
-Congratulations! You have created and minted a fungible token asset on the WAX mainnet.
+恭喜！您已在WAX主网上创建并铸造了同质化代币。
