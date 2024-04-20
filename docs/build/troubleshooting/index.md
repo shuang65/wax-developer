@@ -1,17 +1,17 @@
 ---
-title: Troubleshooting
-order: 200
+标题: 排除故障
+顺序: 200
 ---
 
-# Troubleshooting
+# 排除故障
 
-Below is a list of known issues and fixes (if available).
+以下是已知问题的列表及相关修复方法（如果发生了的话）：
 
-## Build Error in Function `fork_once_func'
+## 函数 `fork_once_func'中的构建错误
 
-**Error Description:** WAX Source Code Repository Build Issue
+**错误描述:** WAX 源代码库构建问题
 
-After running `sudo ./wax_install.sh` to build the WAX Source Code Repository on **Ubuntu 18.04**, the command line reports an error "In function 'fork_once_func'" (around [90%]):
+在**Ubuntu 18.04**上运行`sudo ./wax_install.sh` 构建WAX源代码存储库时， 命令行报告了一个错误： "In function 'fork_once_func'" (大约在 [90%]左右):
 
 ```
 Scanning dependencies of target test_cypher_suites
@@ -31,38 +31,38 @@ make[1]: *** [libraries/fc/test/crypto/CMakeFiles/test_cypher_suites.dir/all] Er
 make[1]: *** Waiting for unfinished jobs....
 ```
 
-Shortly after receiving this error, the build stops with the following message: 
+在收到这个错误后，构建过程停止，并显示以下消息：
 
 ```
-MAKE building EOSIO has exited with the above error. 
+MAKE构建 EOSIO 时出现了上述错误，并已退出。 
 ```
 
-### Fix
+### 修复
 
-You can use the steps below to fix the issue and resume the WAX Source Code Repository build process.
+以下内容是修复问题并继续构建WAX源代码存储库的步骤。
 
-1. From the command line, change your directory to:
+1. 命令行中，将目录更改为：
 
 ```
 cd patches/fc
 ```
 
-2. From the <span class="sampleCode">patches/fc</span> directory, run:
+2. 在 <span class="sampleCode">patches/fc</span> 目录中运行以下命令：
 
 ```
 ./apply_patch.sh
 ```
 
-3. When the patch completes, change your directory to:
+3. 补丁完成后，请切换至以下目录：
 
 ```
 cd ../../build
 ```
 
-4. From the **build** directory, run:
+4. 在 **build** 目录中运行以下命令：
 
 ```
 make -j $(nproc)
 ```
 
-You should now be able to continue the build process. 
+您现在能够继续构建了。
