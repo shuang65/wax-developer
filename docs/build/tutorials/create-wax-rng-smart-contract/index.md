@@ -1,26 +1,26 @@
 ---
-title: Create a WAX RNG Smart Contract
-order: 82
+标题: 创建 WAX RNG 智能 合约
+顺序: 82
 ---
 
-# Create a WAX RNG Smart Contract
+# 创建 WAX RNG 智能合约
 
-In this tutorial, you'll learn how to create and deploy a WAX RNG smart contract.
+在该教程中， 您将学习如何创建和部署WAX RNG 智能合约。
 
-<strong>Note:</strong> At this time, the WAX RNG service is not available from a local development environment. You'll need to publish your smart contract to the WAX mainnet or WAX testnet to test it.
+<strong>注意：</strong> 目前，无法在本地开发环境中使用 WAX RNG 服务。需要您将智能合约发布到 WAX 主网或 WAX 测试网络上进行测试。
 
-## Before You Begin
+## 开始之前
 
-* You'll need to complete our [Docker Quickstart](/build/dapp-development/docker-setup/) (recommended) or use the [WAX Blockchain Setup](/build/dapp-development/wax-blockchain-setup/) to build from source.
-* To compile and deploy your smart contract, you'll need to use the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/).
+* 您需要完成 [Docker 快速入门](/build/dapp-development/docker-setup/) (推荐) 或使用 [WAX 链设置](/build/dapp-development/wax-blockchain-setup/) 来构建源代码。
+* 要编译和部署您的智能合约，需要使用 [WAX 合约开发工具包 (WAX-CDT)](/build/dapp-development/wax-cdt/).
 <!-- This is not needed -->
-<!-- * Install the [WAX Random Number Generator (WAX RNG)](/build/tutorials/wax-rng/). -->
-* To deploy your smart contract to the WAX mainnet or WAX testnet, you'll need to create a self-managed WAX Blockchain Account.
+<!-- * 安装 [WAX 随机数生成器 (WAX RNG)](/build/tutorials/wax-rng/). -->
+* 要将您的智能合约部署到 WAX 主网或 WAX 测试网络，需要创建一个自主管理的 WAX链账户。
 
-<strong>New Developers:</strong> If you're new to dApp development, it's recommended that you review our [Create a Smart Contract](/build/dapp-development/wax-cdt/) Quickstart.
+<strong>新开发者:</strong> 如果您是dApp开发新手，建议先查看我们的[创建智能合约](/build/dapp-development/wax-cdt/) 快速入门。
 :::
 
-**Source Code:** 
+**源代码:** 
 https://github.com/3dkrender/WAX-RNG-Test
 
-<ChildTableOfContents :max="2" title="More inside this section" />
+<ChildTableOfContents :max="2" title="本节内容" />
