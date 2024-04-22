@@ -1,18 +1,18 @@
 ---
-title: WAX RNG Basics
-order: 82
+标题: WAX RNG 基础知识
+顺序: 82
 ---
 
-# WAX RNG Basics
+# WAX RNG 基础知识
 
-* **WAX RNG Smart Contract.** The WAX RNG smart contract runs on the WAX mainnet, owned by the **orng.wax** account.  
-* **WAX RNG Oracle Service.** Secured by the **oracle.wax** account, this service monitors the WAX Blockchain externally, listening for new calls to the WAX RNG smart contract. When you request a new random number, the RNG oracle creates RSA signatures that generate provably fair random numbers. 
+* **WAX RNG 智能合约.** WAX RNG智能合约运行在WAX主网上，由 **orng.wax** 账户管理。  
+* **WAX RNG Oracle 服务.** 由 **oracle.wax** 账户保护，该服务在外部监控WAX链，监听WAX RNG智能合约的新调用。当您请求一个新的随机数时，RNG Oracle会创建RSA签名，生成可证明公平的随机数。 
 
-Here's the typical WAX RNG flow:
+以下是 WAX RNG 的使用流程：
 
-1. Your user or your client-side app supplies a 64-bit random number (*signing_value*). For example, you could display a button that calls a javascript function that generates a pseudo-random number. When the user is satisfied with their seed value, they can click another button (e.g., Start Playing).
-2. You also need to supply a unique tracking number (*assoc_id*). This can be an internal job id or database id. This number will serve as a unique key to identify the request and help retrieve the random number obtained.
-3. Your smart contract calls the WAX RNG service to request a random number, sending your *assoc_id* and the user's *signing_value*.
-4. The WAX RNG oracle accepts your request, then uses an internal public and private key pair to create an RSA signature based on the number supplied by your customer (*signing_value*). This signature is hashed and becomes your random number. 
-5. The WAX RNG service verifies the RSA signature returned from the WAX RNG oracle, then sends the random number to a call-back action in your smart contract, along with your tracking number (*assoc_id*). 
-6. You display the random number to the client or implement some sort of randomization logic, animation, or in-game function.
+1. 您的用户或客户端应用程序提供一个 64 位的随机数（signing_value）。例如，用户可以点击一个按钮，调用一个 JavaScript 函数生成一个伪随机数。当用户对随机数值满意时，他们可以点击另一个按钮（例如，开始游戏）。
+2. 您还需要提供一个唯一的跟踪号（assoc_id）。这可以是内部工作编号或数据库编号。此编号将作为唯一键来识别请求，并帮助检索到的随机数。
+3. 您的智能合约调用WAX RNG服务请求一个随机数，并发送您的 *assoc_id* 和用户的 *signing_value*。
+4. WAX RNG Oracle接收了您的请求，然后使用内部的公钥和私钥对生成一个基于客户提供的数字（signing_value）的RSA签名。这个签名经过哈希处理后就成为了您的随机数。
+5. WAX RNG服务验证来自WAX RNG Oracle的RSA签名，然后将随机数和您的跟踪号 (*assoc_id*)发送到智能合约中的回调函数。 
+6. 您可以将随机数显示到客户端，或者实现一些随机化的逻辑、动画或游戏内的功能。
