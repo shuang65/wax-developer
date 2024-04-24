@@ -1,11 +1,11 @@
 ---
-title: Build Your Contract to call WAX RNG contract
-order: 84
+标题: 创建调用WAX RNG合约的合约
+顺序: 84
 ---
 
-# Build Your Contract to call WAX RNG contract
+# 创建调用WAX RNG合约的合约
 
-In this example, we'll create a smart contract that uses the WAX RNG service to generate a random number no larger than 100. This number gets written to a multi_index table, along with an internal Customer ID, the customer's signing_value, and the checksum256 random_value returned from the WAX RNG oracle.
+本例中，我们将创建一个智能合约，利用WAX RNG服务生成不超过100的随机数。该随机数将写入一个多索引表，包含客户内部ID、客户的签名值，以及WAX RNG Oracle返回的checksum256随机值
 
 To provide fairness, provability, and user confidence, it's recommended that you allow the customer to view or even edit the client-side signing_value. If you prefer to generate the signing_value on the back-end or your app doesn't require a front-end signing_value, you could use the user's transaction hash sent from their wallet. This value is a sha256 hash signed by the client that must be reduced to a 64-bit data.
 
